@@ -1,0 +1,184 @@
+{
+  "input_regions": 10,
+  "selected_region": "Tanzania Plateau",
+  "selected_utility": 0.06019948919245767,
+  "posterior_update": {
+    "posterior_drought_index": 70.455,
+    "posterior_uncertainty": 0.1238,
+    "innovation": 0.073
+  },
+  "plan": {
+    "schema_version": "aurora-mission-plan.v1",
+    "generated_at": "2026-11-14T05:31:43.428785+00:00",
+    "science_state": "deployed drought forecast rows",
+    "selection": {
+      "region": "Tanzania Plateau",
+      "lat": 9455305.0,
+      "lon": 735045.0,
+      "access_window_minutes": 10,
+      "cloud_probability": 0.2998211878538132,
+      "energy_wh": 1.85,
+      "data_mb": 8.0,
+      "information_gain": 0.1113690550060467,
+      "utility": 0.06019948919245767,
+      "feasible": true,
+      "rejection_reason": null
+    },
+    "resources_before": {
+      "battery_wh": 55.0,
+      "storage_mb": 0.0,
+      "storage_capacity_mb": 96.0,
+      "minimum_battery_wh": 11.0,
+      "observation_energy_wh": 1.5,
+      "compute_energy_wh": 0.35,
+      "product_size_mb": 8.0
+    },
+    "resources_after": {
+      "battery_wh": 53.15,
+      "storage_mb": 8.0,
+      "storage_capacity_mb": 96.0,
+      "minimum_battery_wh": 11.0,
+      "observation_energy_wh": 1.5,
+      "compute_energy_wh": 0.35,
+      "product_size_mb": 8.0
+    },
+    "candidates": [
+      {
+        "region": "Tanzania Plateau",
+        "lat": 9455305.0,
+        "lon": 735045.0,
+        "access_window_minutes": 10,
+        "cloud_probability": 0.2998211878538132,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.1113690550060467,
+        "utility": 0.06019948919245767,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_12",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.20297955453395844,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.023227957821775804,
+        "utility": 0.012555652876635568,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_10",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.19911626160144805,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.01884180834081682,
+        "utility": 0.010184761265306388,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_18",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.19562888622283936,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.01640286611001707,
+        "utility": 0.008866414113522741,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "Bangladesh",
+        "lat": 2772195.0,
+        "lon": 335755.0,
+        "access_window_minutes": 10,
+        "cloud_probability": 0.18791115164756775,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.00866574749100346,
+        "utility": 0.004684187832974843,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_11",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.19470228731632233,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.006675022251150906,
+        "utility": 0.003608120135757246,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_17",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.1923905599117279,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.005838536717155975,
+        "utility": 0.0031559657930572836,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "dataset_seq_forecast_v2_cluster_01",
+        "lat": 0.0,
+        "lon": 0.0,
+        "access_window_minutes": 42,
+        "cloud_probability": 0.19146197766065598,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.0057669356916785095,
+        "utility": 0.0031172625360424374,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "Argentina Cordoba Plains",
+        "lat": 6572766.0,
+        "lon": 520908.34375,
+        "access_window_minutes": 10,
+        "cloud_probability": 0.1897536787390709,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.004656545169162807,
+        "utility": 0.002517051442790706,
+        "feasible": true,
+        "rejection_reason": null
+      },
+      {
+        "region": "Congo Basin",
+        "lat": 5129362.0,
+        "lon": 540290.0,
+        "access_window_minutes": 10,
+        "cloud_probability": 0.1817223462462425,
+        "energy_wh": 1.85,
+        "data_mb": 8.0,
+        "information_gain": 0.000810758693758387,
+        "utility": 0.00043824794257210105,
+        "feasible": true,
+        "rejection_reason": null
+      }
+    ],
+    "replan_after_observation": true,
+    "limitations": [
+      "Access windows are planning estimates, not TLE/SGP4 ephemerides.",
+      "Cloud probability is a forecast heuristic derived from available confidence.",
+      "The observation update is a mission simulation; it does not create new satellite data."
+    ]
+  }
+}

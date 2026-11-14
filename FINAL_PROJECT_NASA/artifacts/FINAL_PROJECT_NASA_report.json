@@ -1,0 +1,34 @@
+{
+  "manifest": "aurora_100k_resigned_samples.jsonl",
+  "manifest_metadata_rows": 29487,
+  "tensor_dataset": "dataset_seq_forecast_production_real.npz",
+  "tensor_dataset_samples": 2552,
+  "trained_architecture": "SpectralNetV10",
+  "training_mode": "local cached tensor dataset",
+  "validation_metrics": {
+    "accuracy": 0.9392156862745098,
+    "precision": 0.9098360655737705,
+    "recall": 0.961038961038961,
+    "f1": 0.9347368421052632,
+    "tp": 222.0,
+    "tn": 257.0,
+    "fp": 22.0,
+    "fn": 9.0,
+    "auc": 0.9547238902077612,
+    "threshold": 0.64,
+    "physics_baseline": {
+      "accuracy": 0.5843137254901961,
+      "precision": 0.5214446952595937,
+      "recall": 1.0,
+      "f1": 0.685459940652819,
+      "tp": 231.0,
+      "tn": 67.0,
+      "fp": 212.0,
+      "fn": 0.0,
+      "auc": 0.6763564989371441,
+      "threshold": 0.35
+    },
+    "heldout_regions": []
+  },
+  "provenance_warning": "The metadata manifest is not itself trainable imagery. A 29K claim requires successful retrieval and validation of the corresponding Sentinel-2 windows."
+}

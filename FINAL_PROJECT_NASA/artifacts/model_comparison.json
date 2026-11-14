@@ -1,0 +1,21 @@
+{
+  "dataset": "dataset_seq_forecast_production_real.npz",
+  "samples": 2552,
+  "baseline_checkpoint": "spectral_v10_1_balanced.pt",
+  "new_checkpoint": "spectral_realworld_production.pt",
+  "baseline": {
+    "mse": 0.000737737980671227,
+    "mae": 0.012358928099274635,
+    "rmse": 0.027161332453898998
+  },
+  "new": {
+    "mse": 0.0006334346253424883,
+    "mae": 0.009896217845380306,
+    "rmse": 0.025168127171930937
+  },
+  "delta_new_minus_baseline": {
+    "mse": -0.00010430335532873869,
+    "mae": -0.002462710253894329,
+    "rmse": -0.0019932052819680614
+  }
+}

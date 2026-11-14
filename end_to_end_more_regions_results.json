@@ -1,0 +1,1968 @@
+{
+  "source": "real Sentinel-2 imagery fetched per region",
+  "date_range": "2023-01-01/2025-12-31",
+  "results": {
+    "Western Ghats": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 6.640073843300343e-05,
+      "median_model_probability": 4.6222332457546145e-05,
+      "mean_physics_probability": 0.18728607892990112,
+      "median_physics_probability": 0.1755460649728775,
+      "mean_combined_probability": 0.10079940408468246,
+      "median_combined_probability": 0.0967777818441391,
+      "mean_confidence": 0.5925909876823425,
+      "mean_ndvi": 0.4693746566772461,
+      "mean_ndmi": 0.1587594896554947,
+      "mean_ndwi": -0.42637649178504944,
+      "patches": [
+        {
+          "lat": 1207745.0,
+          "lon": 632895.0,
+          "scene_dates": [
+            "2025-09-12",
+            "2025-10-12",
+            "2025-11-01"
+          ],
+          "model_probability": 3.274199116276577e-05,
+          "physics_probability": 0.16896993984672626,
+          "combined_probability": 0.08573969323809971,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6575584411621094,
+          "future_ndvi": 0.48426133394241333,
+          "future_ndmi": 0.17620670795440674,
+          "future_ndwi": -0.43896663188934326,
+          "trust_score": 0.6595841967771066,
+          "image_path": "real_region_test_images_more\\western_ghats_00.png"
+        },
+        {
+          "lat": 1288305.0,
+          "lon": 607825.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 0.00012023790623061359,
+          "physics_probability": 0.17554606334949457,
+          "combined_probability": 0.09677778127392443,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.4693443179130554,
+          "future_ndvi": 0.45493850111961365,
+          "future_ndmi": 0.1722405105829239,
+          "future_ndwi": -0.41280457377433777,
+          "trust_score": 0.5501479178376354,
+          "image_path": "real_region_test_images_more\\western_ghats_02.png"
+        },
+        {
+          "lat": 1356385.0,
+          "lon": 607435.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 4.6222332457546145e-05,
+          "physics_probability": 0.21734223674413836,
+          "combined_probability": 0.11988071966714225,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.650870144367218,
+          "future_ndvi": 0.4689241051673889,
+          "future_ndmi": 0.12783128023147583,
+          "future_ndwi": -0.4273582398891449,
+          "trust_score": 0.6123705663322454,
+          "image_path": "real_region_test_images_more\\western_ghats_01.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "wetter",
+      "selected_candidates": [
+        {
+          "lat": 1207745.0,
+          "lon": 632895.0,
+          "scene_dates": [
+            "2025-09-12",
+            "2025-10-12",
+            "2025-11-01"
+          ],
+          "model_probability": 3.274199116276577e-05,
+          "physics_probability": 0.16896993984672626,
+          "combined_probability": 0.08573969323809971,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6575584411621094,
+          "future_ndvi": 0.48426133394241333,
+          "future_ndmi": 0.17620670795440674,
+          "future_ndwi": -0.43896663188934326,
+          "trust_score": 0.6595841967771066,
+          "image_path": "real_region_test_images_more\\western_ghats_00.png"
+        },
+        {
+          "lat": 1288305.0,
+          "lon": 607825.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 0.00012023790623061359,
+          "physics_probability": 0.17554606334949457,
+          "combined_probability": 0.09677778127392443,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.4693443179130554,
+          "future_ndvi": 0.45493850111961365,
+          "future_ndmi": 0.1722405105829239,
+          "future_ndwi": -0.41280457377433777,
+          "trust_score": 0.5501479178376354,
+          "image_path": "real_region_test_images_more\\western_ghats_02.png"
+        },
+        {
+          "lat": 1356385.0,
+          "lon": 607435.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 4.6222332457546145e-05,
+          "physics_probability": 0.21734223674413836,
+          "combined_probability": 0.11988071966714225,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.650870144367218,
+          "future_ndvi": 0.4689241051673889,
+          "future_ndmi": 0.12783128023147583,
+          "future_ndwi": -0.4273582398891449,
+          "trust_score": 0.6123705663322454,
+          "image_path": "real_region_test_images_more\\western_ghats_01.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 1208445.0,
+          "lon": 636305.0,
+          "scene_dates": [
+            "2025-11-01",
+            "2025-11-11",
+            "2025-11-21"
+          ],
+          "model_probability": 3.825126896117581e-06,
+          "physics_probability": 0.5187641813242778,
+          "combined_probability": 0.21216438787593384,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5474535226821899,
+          "future_ndvi": 0.4354627728462219,
+          "future_ndmi": 0.1263921856880188,
+          "future_ndwi": -0.3893449902534485,
+          "trust_score": 0.31798720066705455,
+          "image_path": "real_region_test_images_more\\western_ghats_05.png"
+        },
+        {
+          "lat": 1323985.0,
+          "lon": 662485.0,
+          "scene_dates": [
+            "2025-11-01",
+            "2025-11-11",
+            "2025-11-21"
+          ],
+          "model_probability": 0.00044812203850597143,
+          "physics_probability": 0.37864437389584454,
+          "combined_probability": 0.1898561781980842,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.45043182373046875,
+          "future_ndvi": 0.4251784682273865,
+          "future_ndmi": 0.08807869255542755,
+          "future_ndwi": -0.39857590198516846,
+          "trust_score": 0.35695756654549776,
+          "image_path": "real_region_test_images_more\\western_ghats_04.png"
+        },
+        {
+          "lat": 1352305.0,
+          "lon": 513375.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 0.00010259292321279645,
+          "physics_probability": 0.2606173011161145,
+          "combined_probability": 0.13840943616444346,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5345872044563293,
+          "future_ndvi": 0.45372292399406433,
+          "future_ndmi": 0.12046584486961365,
+          "future_ndwi": -0.4152080714702606,
+          "trust_score": 0.5094673914464781,
+          "image_path": "real_region_test_images_more\\western_ghats_03.png"
+        },
+        {
+          "lat": 1356385.0,
+          "lon": 607435.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 4.6222332457546145e-05,
+          "physics_probability": 0.21734223674413836,
+          "combined_probability": 0.11988071966714225,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.650870144367218,
+          "future_ndvi": 0.4689241051673889,
+          "future_ndmi": 0.12783128023147583,
+          "future_ndwi": -0.4273582398891449,
+          "trust_score": 0.6123705663322454,
+          "image_path": "real_region_test_images_more\\western_ghats_01.png"
+        },
+        {
+          "lat": 1288305.0,
+          "lon": 607825.0,
+          "scene_dates": [
+            "2025-10-12",
+            "2025-11-01",
+            "2025-11-11"
+          ],
+          "model_probability": 0.00012023790623061359,
+          "physics_probability": 0.17554606334949457,
+          "combined_probability": 0.09677778127392443,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.4693443179130554,
+          "future_ndvi": 0.45493850111961365,
+          "future_ndmi": 0.1722405105829239,
+          "future_ndwi": -0.41280457377433777,
+          "trust_score": 0.5501479178376354,
+          "image_path": "real_region_test_images_more\\western_ghats_02.png"
+        },
+        {
+          "lat": 1207745.0,
+          "lon": 632895.0,
+          "scene_dates": [
+            "2025-09-12",
+            "2025-10-12",
+            "2025-11-01"
+          ],
+          "model_probability": 3.274199116276577e-05,
+          "physics_probability": 0.16896993984672626,
+          "combined_probability": 0.08573969323809971,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6575584411621094,
+          "future_ndvi": 0.48426133394241333,
+          "future_ndmi": 0.17620670795440674,
+          "future_ndwi": -0.43896663188934326,
+          "trust_score": 0.6595841967771066,
+          "image_path": "real_region_test_images_more\\western_ghats_00.png"
+        }
+      ]
+    },
+    "Kerala": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.00037428716314025223,
+      "median_model_probability": 0.0005583532620221376,
+      "mean_physics_probability": 0.22812597453594208,
+      "median_physics_probability": 0.2795032858848572,
+      "mean_combined_probability": 0.12276431918144226,
+      "median_combined_probability": 0.14990448951721191,
+      "mean_confidence": 0.40019139647483826,
+      "mean_ndvi": 0.45231375098228455,
+      "mean_ndmi": 0.16416114568710327,
+      "mean_ndwi": -0.4089480936527252,
+      "patches": [
+        {
+          "lat": 1273785.0,
+          "lon": 574635.0,
+          "scene_dates": [
+            "2025-11-01",
+            "2025-11-13",
+            "2025-11-21"
+          ],
+          "model_probability": 0.0005628037615679204,
+          "physics_probability": 0.12163381150443411,
+          "combined_probability": 0.06748070004450335,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.1685238927602768,
+          "future_ndvi": 0.5369856357574463,
+          "future_ndmi": 0.2200319766998291,
+          "future_ndwi": -0.4898490309715271,
+          "trust_score": 0.4332177106641616,
+          "image_path": "real_region_test_images_more\\kerala_00.png"
+        },
+        {
+          "lat": 1148205.0,
+          "lon": 639425.0,
+          "scene_dates": [
+            "2025-11-13",
+            "2025-11-16",
+            "2025-11-16"
+          ],
+          "model_probability": 0.0005583532620221376,
+          "physics_probability": 0.2795032804103518,
+          "combined_probability": 0.15090777318584525,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39586353302001953,
+          "future_ndvi": 0.39187055826187134,
+          "future_ndmi": 0.14763176441192627,
+          "future_ndwi": -0.34850233793258667,
+          "trust_score": 0.4161719907916942,
+          "image_path": "real_region_test_images_more\\kerala_02.png"
+        },
+        {
+          "lat": 1022605.0,
+          "lon": 536745.0,
+          "scene_dates": [
+            "2025-11-16",
+            "2025-11-21",
+            "2025-11-21"
+          ],
+          "model_probability": 1.7044252444975427e-06,
+          "physics_probability": 0.28324076463776315,
+          "combined_probability": 0.14990448654857674,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6361867189407349,
+          "future_ndvi": 0.4280850291252136,
+          "future_ndmi": 0.12481971085071564,
+          "future_ndwi": -0.38849297165870667,
+          "trust_score": 0.5449860072434174,
+          "image_path": "real_region_test_images_more\\kerala_03.png"
+        }
+      ],
+      "candidate_count": 4,
+      "expected": "wetter",
+      "selected_candidates": [
+        {
+          "lat": 1273785.0,
+          "lon": 574635.0,
+          "scene_dates": [
+            "2025-11-01",
+            "2025-11-13",
+            "2025-11-21"
+          ],
+          "model_probability": 0.0005628037615679204,
+          "physics_probability": 0.12163381150443411,
+          "combined_probability": 0.06748070004450335,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.1685238927602768,
+          "future_ndvi": 0.5369856357574463,
+          "future_ndmi": 0.2200319766998291,
+          "future_ndwi": -0.4898490309715271,
+          "trust_score": 0.4332177106641616,
+          "image_path": "real_region_test_images_more\\kerala_00.png"
+        },
+        {
+          "lat": 1148205.0,
+          "lon": 639425.0,
+          "scene_dates": [
+            "2025-11-13",
+            "2025-11-16",
+            "2025-11-16"
+          ],
+          "model_probability": 0.0005583532620221376,
+          "physics_probability": 0.2795032804103518,
+          "combined_probability": 0.15090777318584525,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39586353302001953,
+          "future_ndvi": 0.39187055826187134,
+          "future_ndmi": 0.14763176441192627,
+          "future_ndwi": -0.34850233793258667,
+          "trust_score": 0.4161719907916942,
+          "image_path": "real_region_test_images_more\\kerala_02.png"
+        },
+        {
+          "lat": 1022605.0,
+          "lon": 536745.0,
+          "scene_dates": [
+            "2025-11-16",
+            "2025-11-21",
+            "2025-11-21"
+          ],
+          "model_probability": 1.7044252444975427e-06,
+          "physics_probability": 0.28324076463776315,
+          "combined_probability": 0.14990448654857674,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6361867189407349,
+          "future_ndvi": 0.4280850291252136,
+          "future_ndmi": 0.12481971085071564,
+          "future_ndwi": -0.38849297165870667,
+          "trust_score": 0.5449860072434174,
+          "image_path": "real_region_test_images_more\\kerala_03.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 1214045.0,
+          "lon": 652155.0,
+          "scene_dates": [
+            "2025-11-13",
+            "2025-11-13",
+            "2025-11-16"
+          ],
+          "model_probability": 0.00011424553667893633,
+          "physics_probability": 0.37305434490059663,
+          "combined_probability": 0.18829369945947053,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39488685131073,
+          "future_ndvi": 0.38866570591926575,
+          "future_ndmi": 0.11577450484037399,
+          "future_ndwi": -0.3464828431606293,
+          "trust_score": 0.33143885781036453,
+          "image_path": "real_region_test_images_more\\kerala_01.png"
+        },
+        {
+          "lat": 1148205.0,
+          "lon": 639425.0,
+          "scene_dates": [
+            "2025-11-13",
+            "2025-11-16",
+            "2025-11-16"
+          ],
+          "model_probability": 0.0005583532620221376,
+          "physics_probability": 0.2795032804103518,
+          "combined_probability": 0.15090777318584525,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39586353302001953,
+          "future_ndvi": 0.39187055826187134,
+          "future_ndmi": 0.14763176441192627,
+          "future_ndwi": -0.34850233793258667,
+          "trust_score": 0.4161719907916942,
+          "image_path": "real_region_test_images_more\\kerala_02.png"
+        },
+        {
+          "lat": 1022605.0,
+          "lon": 536745.0,
+          "scene_dates": [
+            "2025-11-16",
+            "2025-11-21",
+            "2025-11-21"
+          ],
+          "model_probability": 1.7044252444975427e-06,
+          "physics_probability": 0.28324076463776315,
+          "combined_probability": 0.14990448654857674,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6361867189407349,
+          "future_ndvi": 0.4280850291252136,
+          "future_ndmi": 0.12481971085071564,
+          "future_ndwi": -0.38849297165870667,
+          "trust_score": 0.5449860072434174,
+          "image_path": "real_region_test_images_more\\kerala_03.png"
+        },
+        {
+          "lat": 1273785.0,
+          "lon": 574635.0,
+          "scene_dates": [
+            "2025-11-01",
+            "2025-11-13",
+            "2025-11-21"
+          ],
+          "model_probability": 0.0005628037615679204,
+          "physics_probability": 0.12163381150443411,
+          "combined_probability": 0.06748070004450335,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.1685238927602768,
+          "future_ndvi": 0.5369856357574463,
+          "future_ndmi": 0.2200319766998291,
+          "future_ndwi": -0.4898490309715271,
+          "trust_score": 0.4332177106641616,
+          "image_path": "real_region_test_images_more\\kerala_00.png"
+        }
+      ]
+    },
+    "Congo Basin": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.0021529344376176596,
+      "median_model_probability": 0.0001554175978526473,
+      "mean_physics_probability": 0.2176675796508789,
+      "median_physics_probability": 0.2232854962348938,
+      "mean_combined_probability": 0.11142715066671371,
+      "median_combined_probability": 0.10490911453962326,
+      "mean_confidence": 0.4957250654697418,
+      "mean_ndvi": 0.43716540932655334,
+      "mean_ndmi": 0.19611287117004395,
+      "mean_ndwi": -0.3948868215084076,
+      "patches": [
+        {
+          "lat": 93145.0,
+          "lon": 644575.0,
+          "scene_dates": [
+            "2025-10-23",
+            "2025-11-02",
+            "2025-11-07"
+          ],
+          "model_probability": 2.0670857338700444e-05,
+          "physics_probability": 0.19334869533172638,
+          "combined_probability": 0.10490911725245192,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6098415851593018,
+          "future_ndvi": 0.43252742290496826,
+          "future_ndmi": 0.1889209747314453,
+          "future_ndwi": -0.37921541929244995,
+          "trust_score": 0.6113990460390623,
+          "image_path": "real_region_test_images_more\\congo_basin_00.png"
+        },
+        {
+          "lat": 9961905.0,
+          "lon": 820065.0,
+          "scene_dates": [
+            "2025-11-07",
+            "2025-11-15",
+            "2025-11-20"
+          ],
+          "model_probability": 0.006282714661210775,
+          "physics_probability": 0.22328549866855166,
+          "combined_probability": 0.12546007326086264,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3621181845664978,
+          "future_ndvi": 0.3980466425418854,
+          "future_ndmi": 0.18436282873153687,
+          "future_ndwi": -0.3743740916252136,
+          "trust_score": 0.44820805270987735,
+          "image_path": "real_region_test_images_more\\congo_basin_02.png"
+        },
+        {
+          "lat": 190935.0,
+          "lon": 625175.0,
+          "scene_dates": [
+            "2025-11-10",
+            "2025-11-17",
+            "2025-11-25"
+          ],
+          "model_probability": 0.0001554175978526473,
+          "physics_probability": 0.2363685041049641,
+          "combined_probability": 0.10391226319383863,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5152153968811035,
+          "future_ndvi": 0.48092225193977356,
+          "future_ndmi": 0.21505483984947205,
+          "future_ndwi": -0.4310709834098816,
+          "trust_score": 0.5206368145901392,
+          "image_path": "real_region_test_images_more\\congo_basin_05.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "wetter",
+      "selected_candidates": [
+        {
+          "lat": 93145.0,
+          "lon": 644575.0,
+          "scene_dates": [
+            "2025-10-23",
+            "2025-11-02",
+            "2025-11-07"
+          ],
+          "model_probability": 2.0670857338700444e-05,
+          "physics_probability": 0.19334869533172638,
+          "combined_probability": 0.10490911725245192,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6098415851593018,
+          "future_ndvi": 0.43252742290496826,
+          "future_ndmi": 0.1889209747314453,
+          "future_ndwi": -0.37921541929244995,
+          "trust_score": 0.6113990460390623,
+          "image_path": "real_region_test_images_more\\congo_basin_00.png"
+        },
+        {
+          "lat": 9961905.0,
+          "lon": 820065.0,
+          "scene_dates": [
+            "2025-11-07",
+            "2025-11-15",
+            "2025-11-20"
+          ],
+          "model_probability": 0.006282714661210775,
+          "physics_probability": 0.22328549866855166,
+          "combined_probability": 0.12546007326086264,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3621181845664978,
+          "future_ndvi": 0.3980466425418854,
+          "future_ndmi": 0.18436282873153687,
+          "future_ndwi": -0.3743740916252136,
+          "trust_score": 0.44820805270987735,
+          "image_path": "real_region_test_images_more\\congo_basin_02.png"
+        },
+        {
+          "lat": 190935.0,
+          "lon": 625175.0,
+          "scene_dates": [
+            "2025-11-10",
+            "2025-11-17",
+            "2025-11-25"
+          ],
+          "model_probability": 0.0001554175978526473,
+          "physics_probability": 0.2363685041049641,
+          "combined_probability": 0.10391226319383863,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5152153968811035,
+          "future_ndvi": 0.48092225193977356,
+          "future_ndmi": 0.21505483984947205,
+          "future_ndwi": -0.4310709834098816,
+          "trust_score": 0.5206368145901392,
+          "image_path": "real_region_test_images_more\\congo_basin_05.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 108755.0,
+          "lon": 639695.0,
+          "scene_dates": [
+            "2025-11-02",
+            "2025-11-07",
+            "2025-11-15"
+          ],
+          "model_probability": 0.9037193059921265,
+          "physics_probability": 0.355865562959445,
+          "combined_probability": 0.6054075446173574,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.31500086188316345,
+          "future_ndvi": 0.41767656803131104,
+          "future_ndmi": 0.19683390855789185,
+          "future_ndwi": -0.3682500720024109,
+          "trust_score": 0.30297146737223946,
+          "image_path": "real_region_test_images_more\\congo_basin_01.png"
+        },
+        {
+          "lat": 9819155.0,
+          "lon": 712415.0,
+          "scene_dates": [
+            "2025-11-07",
+            "2025-11-15",
+            "2025-11-20"
+          ],
+          "model_probability": 1.3448468052956741e-05,
+          "physics_probability": 0.44034177400256175,
+          "combined_probability": 0.16474375152223203,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.47930267453193665,
+          "future_ndvi": 0.4628705680370331,
+          "future_ndmi": 0.1863369643688202,
+          "future_ndwi": -0.42439520359039307,
+          "trust_score": 0.3173088743902596,
+          "image_path": "real_region_test_images_more\\congo_basin_04.png"
+        },
+        {
+          "lat": 9853355.0,
+          "lon": 816775.0,
+          "scene_dates": [
+            "2025-11-07",
+            "2025-11-15",
+            "2025-11-20"
+          ],
+          "model_probability": 0.00044043175876140594,
+          "physics_probability": 0.26967798181989744,
+          "combined_probability": 0.12939949894469005,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5314064025878906,
+          "future_ndvi": 0.42125028371810913,
+          "future_ndmi": 0.17917613685131073,
+          "future_ndwi": -0.3961118757724762,
+          "trust_score": 0.49956333778543216,
+          "image_path": "real_region_test_images_more\\congo_basin_03.png"
+        },
+        {
+          "lat": 9961905.0,
+          "lon": 820065.0,
+          "scene_dates": [
+            "2025-11-07",
+            "2025-11-15",
+            "2025-11-20"
+          ],
+          "model_probability": 0.006282714661210775,
+          "physics_probability": 0.22328549866855166,
+          "combined_probability": 0.12546007326086264,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3621181845664978,
+          "future_ndvi": 0.3980466425418854,
+          "future_ndmi": 0.18436282873153687,
+          "future_ndwi": -0.3743740916252136,
+          "trust_score": 0.44820805270987735,
+          "image_path": "real_region_test_images_more\\congo_basin_02.png"
+        },
+        {
+          "lat": 93145.0,
+          "lon": 644575.0,
+          "scene_dates": [
+            "2025-10-23",
+            "2025-11-02",
+            "2025-11-07"
+          ],
+          "model_probability": 2.0670857338700444e-05,
+          "physics_probability": 0.19334869533172638,
+          "combined_probability": 0.10490911725245192,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6098415851593018,
+          "future_ndvi": 0.43252742290496826,
+          "future_ndmi": 0.1889209747314453,
+          "future_ndwi": -0.37921541929244995,
+          "trust_score": 0.6113990460390623,
+          "image_path": "real_region_test_images_more\\congo_basin_00.png"
+        },
+        {
+          "lat": 190935.0,
+          "lon": 625175.0,
+          "scene_dates": [
+            "2025-11-10",
+            "2025-11-17",
+            "2025-11-25"
+          ],
+          "model_probability": 0.0001554175978526473,
+          "physics_probability": 0.2363685041049641,
+          "combined_probability": 0.10391226319383863,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.5152153968811035,
+          "future_ndvi": 0.48092225193977356,
+          "future_ndmi": 0.21505483984947205,
+          "future_ndwi": -0.4310709834098816,
+          "trust_score": 0.5206368145901392,
+          "image_path": "real_region_test_images_more\\congo_basin_05.png"
+        }
+      ]
+    },
+    "Bangladesh Delta": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.45288708806037903,
+      "median_model_probability": 0.31449708342552185,
+      "mean_physics_probability": 0.4787830114364624,
+      "median_physics_probability": 0.49698734283447266,
+      "mean_combined_probability": 0.45540329813957214,
+      "median_combined_probability": 0.3889996111392975,
+      "mean_confidence": 0.42558059096336365,
+      "mean_ndvi": 0.2591664791107178,
+      "mean_ndmi": 0.18425555527210236,
+      "mean_ndwi": -0.234028160572052,
+      "patches": [
+        {
+          "lat": 2561795.0,
+          "lon": 847505.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.31449708342552185,
+          "physics_probability": 0.4969873515478013,
+          "combined_probability": 0.38899960064595845,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39220795035362244,
+          "future_ndvi": 0.2651887536048889,
+          "future_ndmi": 0.19090990722179413,
+          "future_ndwi": -0.23901954293251038,
+          "trust_score": 0.21842575630147118,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_04.png"
+        },
+        {
+          "lat": 2450985.0,
+          "lon": 796705.0,
+          "scene_dates": [
+            "2025-12-06",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.7934377789497375,
+          "physics_probability": 0.5400302224190663,
+          "combined_probability": 0.6467808598712161,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.46584102511405945,
+          "future_ndvi": 0.24874761700630188,
+          "future_ndmi": 0.16984453797340393,
+          "future_ndwi": -0.22638018429279327,
+          "trust_score": 0.2922397639898924,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_01.png"
+        },
+        {
+          "lat": 2529465.0,
+          "lon": 250335.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.25072649121284485,
+          "physics_probability": 0.39933141362458774,
+          "combined_probability": 0.33042941622676786,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.41869282722473145,
+          "future_ndvi": 0.2635630667209625,
+          "future_ndmi": 0.1920122355222702,
+          "future_ndwi": -0.23668473958969116,
+          "trust_score": 0.32088278271147336,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_02.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "moderate",
+      "selected_candidates": [
+        {
+          "lat": 2561795.0,
+          "lon": 847505.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.31449708342552185,
+          "physics_probability": 0.4969873515478013,
+          "combined_probability": 0.38899960064595845,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39220795035362244,
+          "future_ndvi": 0.2651887536048889,
+          "future_ndmi": 0.19090990722179413,
+          "future_ndwi": -0.23901954293251038,
+          "trust_score": 0.21842575630147118,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_04.png"
+        },
+        {
+          "lat": 2450985.0,
+          "lon": 796705.0,
+          "scene_dates": [
+            "2025-12-06",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.7934377789497375,
+          "physics_probability": 0.5400302224190663,
+          "combined_probability": 0.6467808598712161,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.46584102511405945,
+          "future_ndvi": 0.24874761700630188,
+          "future_ndmi": 0.16984453797340393,
+          "future_ndwi": -0.22638018429279327,
+          "trust_score": 0.2922397639898924,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_01.png"
+        },
+        {
+          "lat": 2529465.0,
+          "lon": 250335.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.25072649121284485,
+          "physics_probability": 0.39933141362458774,
+          "combined_probability": 0.33042941622676786,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.41869282722473145,
+          "future_ndvi": 0.2635630667209625,
+          "future_ndmi": 0.1920122355222702,
+          "future_ndwi": -0.23668473958969116,
+          "trust_score": 0.32088278271147336,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_02.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 2453375.0,
+          "lon": 874685.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.9606715440750122,
+          "physics_probability": 0.39647921771764394,
+          "combined_probability": 0.7309881079749513,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.4818999469280243,
+          "future_ndvi": 0.27419522404670715,
+          "future_ndmi": 0.042184218764305115,
+          "future_ndwi": -0.3044879734516144,
+          "trust_score": 0.35821367486453387,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_05.png"
+        },
+        {
+          "lat": 2450985.0,
+          "lon": 796705.0,
+          "scene_dates": [
+            "2025-12-06",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.7934377789497375,
+          "physics_probability": 0.5400302224190663,
+          "combined_probability": 0.6467808598712161,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.46584102511405945,
+          "future_ndvi": 0.24874761700630188,
+          "future_ndmi": 0.16984453797340393,
+          "future_ndwi": -0.22638018429279327,
+          "trust_score": 0.2922397639898924,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_01.png"
+        },
+        {
+          "lat": 2561795.0,
+          "lon": 847505.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.31449708342552185,
+          "physics_probability": 0.4969873515478013,
+          "combined_probability": 0.38899960064595845,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.39220795035362244,
+          "future_ndvi": 0.2651887536048889,
+          "future_ndmi": 0.19090990722179413,
+          "future_ndwi": -0.23901954293251038,
+          "trust_score": 0.21842575630147118,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_04.png"
+        },
+        {
+          "lat": 2529465.0,
+          "lon": 250335.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.25072649121284485,
+          "physics_probability": 0.39933141362458774,
+          "combined_probability": 0.33042941622676786,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.41869282722473145,
+          "future_ndvi": 0.2635630667209625,
+          "future_ndmi": 0.1920122355222702,
+          "future_ndwi": -0.23668473958969116,
+          "trust_score": 0.32088278271147336,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_02.png"
+        },
+        {
+          "lat": 2575275.0,
+          "lon": 792495.0,
+          "scene_dates": [
+            "2025-12-06",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.005598627962172031,
+          "physics_probability": 0.32514463221161555,
+          "combined_probability": 0.21730070656118777,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.28901445865631104,
+          "future_ndvi": 0.2844354212284088,
+          "future_ndmi": 0.08206665515899658,
+          "future_ndwi": -0.26877450942993164,
+          "trust_score": 0.31632778327051714,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_00.png"
+        },
+        {
+          "lat": 2460405.0,
+          "lon": 228775.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-16",
+            "2025-12-26"
+          ],
+          "model_probability": 0.0007688294281251729,
+          "physics_probability": 0.3124279074524106,
+          "combined_probability": 0.20390837589290667,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3083041310310364,
+          "future_ndvi": 0.2726242244243622,
+          "future_ndmi": 0.1127680167555809,
+          "future_ndwi": -0.2513883709907532,
+          "trust_score": 0.33838215535990046,
+          "image_path": "real_region_test_images_more\\bangladesh_delta_03.png"
+        }
+      ]
+    },
+    "Spain Drylands": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.7345202565193176,
+      "median_model_probability": 0.9963822364807129,
+      "mean_physics_probability": 0.6342845559120178,
+      "median_physics_probability": 0.5929555892944336,
+      "mean_combined_probability": 0.7916854023933411,
+      "median_combined_probability": 0.8151872754096985,
+      "mean_confidence": 0.4541252553462982,
+      "mean_ndvi": 0.22733034193515778,
+      "mean_ndmi": -0.005146626848727465,
+      "mean_ndwi": -0.29164397716522217,
+      "patches": [
+        {
+          "lat": 4290745.0,
+          "lon": 342085.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.9995645880699158,
+          "physics_probability": 0.7670293623528425,
+          "combined_probability": 0.8752208461513589,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6678764820098877,
+          "future_ndvi": 0.20369651913642883,
+          "future_ndmi": 0.030337659642100334,
+          "future_ndwi": -0.2848166227340698,
+          "trust_score": 0.6076584912229965,
+          "image_path": "real_region_test_images_more\\spain_drylands_04.png"
+        },
+        {
+          "lat": 4342205.0,
+          "lon": 401285.0,
+          "scene_dates": [
+            "2025-12-18",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.2076140195131302,
+          "physics_probability": 0.5929555893272165,
+          "combined_probability": 0.6846480912364612,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.26956820487976074,
+          "future_ndvi": 0.23965440690517426,
+          "future_ndmi": -0.03996826335787773,
+          "future_ndwi": -0.2633207142353058,
+          "trust_score": 0.23192254307836324,
+          "image_path": "real_region_test_images_more\\spain_drylands_05.png"
+        },
+        {
+          "lat": 4461375.0,
+          "lon": 377565.0,
+          "scene_dates": [
+            "2025-12-01",
+            "2025-12-08",
+            "2025-12-15"
+          ],
+          "model_probability": 0.9963822364807129,
+          "physics_probability": 0.5428688211553443,
+          "combined_probability": 0.815187293542316,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.42493098974227905,
+          "future_ndvi": 0.23864011466503143,
+          "future_ndmi": -0.005809276830404997,
+          "future_ndwi": -0.3267945945262909,
+          "trust_score": 0.2722939833980634,
+          "image_path": "real_region_test_images_more\\spain_drylands_03.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "drier",
+      "selected_candidates": [
+        {
+          "lat": 4290745.0,
+          "lon": 342085.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.9995645880699158,
+          "physics_probability": 0.7670293623528425,
+          "combined_probability": 0.8752208461513589,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6678764820098877,
+          "future_ndvi": 0.20369651913642883,
+          "future_ndmi": 0.030337659642100334,
+          "future_ndwi": -0.2848166227340698,
+          "trust_score": 0.6076584912229965,
+          "image_path": "real_region_test_images_more\\spain_drylands_04.png"
+        },
+        {
+          "lat": 4342205.0,
+          "lon": 401285.0,
+          "scene_dates": [
+            "2025-12-18",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.2076140195131302,
+          "physics_probability": 0.5929555893272165,
+          "combined_probability": 0.6846480912364612,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.26956820487976074,
+          "future_ndvi": 0.23965440690517426,
+          "future_ndmi": -0.03996826335787773,
+          "future_ndwi": -0.2633207142353058,
+          "trust_score": 0.23192254307836324,
+          "image_path": "real_region_test_images_more\\spain_drylands_05.png"
+        },
+        {
+          "lat": 4461375.0,
+          "lon": 377565.0,
+          "scene_dates": [
+            "2025-12-01",
+            "2025-12-08",
+            "2025-12-15"
+          ],
+          "model_probability": 0.9963822364807129,
+          "physics_probability": 0.5428688211553443,
+          "combined_probability": 0.815187293542316,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.42493098974227905,
+          "future_ndvi": 0.23864011466503143,
+          "future_ndmi": -0.005809276830404997,
+          "future_ndwi": -0.3267945945262909,
+          "trust_score": 0.2722939833980634,
+          "image_path": "real_region_test_images_more\\spain_drylands_03.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 4290745.0,
+          "lon": 342085.0,
+          "scene_dates": [
+            "2025-12-11",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.9995645880699158,
+          "physics_probability": 0.7670293623528425,
+          "combined_probability": 0.8752208461513589,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.6678764820098877,
+          "future_ndvi": 0.20369651913642883,
+          "future_ndmi": 0.030337659642100334,
+          "future_ndwi": -0.2848166227340698,
+          "trust_score": 0.6076584912229965,
+          "image_path": "real_region_test_images_more\\spain_drylands_04.png"
+        },
+        {
+          "lat": 4461375.0,
+          "lon": 377565.0,
+          "scene_dates": [
+            "2025-12-01",
+            "2025-12-08",
+            "2025-12-15"
+          ],
+          "model_probability": 0.9963822364807129,
+          "physics_probability": 0.5428688211553443,
+          "combined_probability": 0.815187293542316,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.42493098974227905,
+          "future_ndvi": 0.23864011466503143,
+          "future_ndmi": -0.005809276830404997,
+          "future_ndwi": -0.3267945945262909,
+          "trust_score": 0.2722939833980634,
+          "image_path": "real_region_test_images_more\\spain_drylands_03.png"
+        },
+        {
+          "lat": 4318565.0,
+          "lon": 306385.0,
+          "scene_dates": [
+            "2025-11-26",
+            "2025-12-03",
+            "2025-12-11"
+          ],
+          "model_probability": 0.9545890688896179,
+          "physics_probability": 0.5348015138814501,
+          "combined_probability": 0.7842726911095064,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3929220736026764,
+          "future_ndvi": 0.22037111222743988,
+          "future_ndmi": 0.030784962698817253,
+          "future_ndwi": -0.2575092017650604,
+          "trust_score": 0.24742850297477717,
+          "image_path": "real_region_test_images_more\\spain_drylands_01.png"
+        },
+        {
+          "lat": 4342205.0,
+          "lon": 401285.0,
+          "scene_dates": [
+            "2025-12-18",
+            "2025-12-18",
+            "2025-12-31"
+          ],
+          "model_probability": 0.2076140195131302,
+          "physics_probability": 0.5929555893272165,
+          "combined_probability": 0.6846480912364612,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.26956820487976074,
+          "future_ndvi": 0.23965440690517426,
+          "future_ndmi": -0.03996826335787773,
+          "future_ndwi": -0.2633207142353058,
+          "trust_score": 0.23192254307836324,
+          "image_path": "real_region_test_images_more\\spain_drylands_05.png"
+        },
+        {
+          "lat": 4416405.0,
+          "lon": 322685.0,
+          "scene_dates": [
+            "2025-11-26",
+            "2025-12-03",
+            "2025-12-11"
+          ],
+          "model_probability": 0.1492670774459839,
+          "physics_probability": 0.4712837435541359,
+          "combined_probability": 0.6156733904819905,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2683420479297638,
+          "future_ndvi": 0.23419880867004395,
+          "future_ndmi": -0.03280028700828552,
+          "future_ndwi": -0.26337990164756775,
+          "trust_score": 0.1734327571626478,
+          "image_path": "real_region_test_images_more\\spain_drylands_00.png"
+        },
+        {
+          "lat": 4394975.0,
+          "lon": 407815.0,
+          "scene_dates": [
+            "2025-11-28",
+            "2025-12-03",
+            "2025-12-11"
+          ],
+          "model_probability": 0.031153859570622444,
+          "physics_probability": 0.5015691661291012,
+          "combined_probability": 0.5901595386871997,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.24704349040985107,
+          "future_ndvi": 0.23724909126758575,
+          "future_ndmi": 0.025765225291252136,
+          "future_ndwi": -0.26333069801330566,
+          "trust_score": 0.13728616924160916,
+          "image_path": "real_region_test_images_more\\spain_drylands_02.png"
+        }
+      ]
+    },
+    "Rajasthan": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.7125568985939026,
+      "median_model_probability": 0.6293588876724243,
+      "mean_physics_probability": 0.48872148990631104,
+      "median_physics_probability": 0.49026140570640564,
+      "mean_combined_probability": 0.6829498410224915,
+      "median_combined_probability": 0.6462637782096863,
+      "mean_confidence": 0.2865959703922272,
+      "mean_ndvi": 0.21998010575771332,
+      "mean_ndmi": -0.02771642804145813,
+      "mean_ndwi": -0.28469789028167725,
+      "patches": [
+        {
+          "lat": 2978205.0,
+          "lon": 698175.0,
+          "scene_dates": [
+            "2025-11-30",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.9394582509994507,
+          "physics_probability": 0.5054514246325141,
+          "combined_probability": 0.7785734082640343,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.30403274297714233,
+          "future_ndvi": 0.22996696829795837,
+          "future_ndmi": -0.005309367552399635,
+          "future_ndwi": -0.29430705308914185,
+          "trust_score": 0.17212429080669103,
+          "image_path": "real_region_test_images_more\\rajasthan_02.png"
+        },
+        {
+          "lat": 2938865.0,
+          "lon": 691175.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.6293588876724243,
+          "physics_probability": 0.49026139560251847,
+          "combined_probability": 0.646263765982318,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.27900955080986023,
+          "future_ndvi": 0.204172745347023,
+          "future_ndmi": -0.038797527551651,
+          "future_ndwi": -0.26962512731552124,
+          "trust_score": 0.16221999690315653,
+          "image_path": "real_region_test_images_more\\rajasthan_04.png"
+        },
+        {
+          "lat": 3013285.0,
+          "lon": 668915.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.5688536167144775,
+          "physics_probability": 0.47045158271426885,
+          "combined_probability": 0.62401253627498,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2767457067966461,
+          "future_ndvi": 0.22580057382583618,
+          "future_ndmi": -0.0390423946082592,
+          "future_ndwi": -0.29016146063804626,
+          "trust_score": 0.17880371429531342,
+          "image_path": "real_region_test_images_more\\rajasthan_03.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "drier",
+      "selected_candidates": [
+        {
+          "lat": 2978205.0,
+          "lon": 698175.0,
+          "scene_dates": [
+            "2025-11-30",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.9394582509994507,
+          "physics_probability": 0.5054514246325141,
+          "combined_probability": 0.7785734082640343,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.30403274297714233,
+          "future_ndvi": 0.22996696829795837,
+          "future_ndmi": -0.005309367552399635,
+          "future_ndwi": -0.29430705308914185,
+          "trust_score": 0.17212429080669103,
+          "image_path": "real_region_test_images_more\\rajasthan_02.png"
+        },
+        {
+          "lat": 2938865.0,
+          "lon": 691175.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.6293588876724243,
+          "physics_probability": 0.49026139560251847,
+          "combined_probability": 0.646263765982318,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.27900955080986023,
+          "future_ndvi": 0.204172745347023,
+          "future_ndmi": -0.038797527551651,
+          "future_ndwi": -0.26962512731552124,
+          "trust_score": 0.16221999690315653,
+          "image_path": "real_region_test_images_more\\rajasthan_04.png"
+        },
+        {
+          "lat": 3013285.0,
+          "lon": 668915.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.5688536167144775,
+          "physics_probability": 0.47045158271426885,
+          "combined_probability": 0.62401253627498,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2767457067966461,
+          "future_ndvi": 0.22580057382583618,
+          "future_ndmi": -0.0390423946082592,
+          "future_ndwi": -0.29016146063804626,
+          "trust_score": 0.17880371429531342,
+          "image_path": "real_region_test_images_more\\rajasthan_03.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 2978205.0,
+          "lon": 698175.0,
+          "scene_dates": [
+            "2025-11-30",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.9394582509994507,
+          "physics_probability": 0.5054514246325141,
+          "combined_probability": 0.7785734082640343,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.30403274297714233,
+          "future_ndvi": 0.22996696829795837,
+          "future_ndmi": -0.005309367552399635,
+          "future_ndwi": -0.29430705308914185,
+          "trust_score": 0.17212429080669103,
+          "image_path": "real_region_test_images_more\\rajasthan_02.png"
+        },
+        {
+          "lat": 3023685.0,
+          "lon": 792645.0,
+          "scene_dates": [
+            "2025-11-25",
+            "2025-11-30",
+            "2025-12-10"
+          ],
+          "model_probability": 0.855155348777771,
+          "physics_probability": 0.4534459542186872,
+          "combined_probability": 0.7181651210490416,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.2651684284210205,
+          "future_ndvi": 0.22003740072250366,
+          "future_ndmi": 0.013760300353169441,
+          "future_ndwi": -0.27682533860206604,
+          "trust_score": 0.18774127683474282,
+          "image_path": "real_region_test_images_more\\rajasthan_00.png"
+        },
+        {
+          "lat": 2938865.0,
+          "lon": 691175.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.6293588876724243,
+          "physics_probability": 0.49026139560251847,
+          "combined_probability": 0.646263765982318,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.27900955080986023,
+          "future_ndvi": 0.204172745347023,
+          "future_ndmi": -0.038797527551651,
+          "future_ndwi": -0.26962512731552124,
+          "trust_score": 0.16221999690315653,
+          "image_path": "real_region_test_images_more\\rajasthan_04.png"
+        },
+        {
+          "lat": 3013285.0,
+          "lon": 668915.0,
+          "scene_dates": [
+            "2025-12-05",
+            "2025-12-10",
+            "2025-12-20"
+          ],
+          "model_probability": 0.5688536167144775,
+          "physics_probability": 0.47045158271426885,
+          "combined_probability": 0.62401253627498,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2767457067966461,
+          "future_ndvi": 0.22580057382583618,
+          "future_ndmi": -0.0390423946082592,
+          "future_ndwi": -0.29016146063804626,
+          "trust_score": 0.17880371429531342,
+          "image_path": "real_region_test_images_more\\rajasthan_03.png"
+        },
+        {
+          "lat": 2948875.0,
+          "lon": 784725.0,
+          "scene_dates": [
+            "2025-12-15",
+            "2025-12-20",
+            "2025-12-30"
+          ],
+          "model_probability": 0.5141130685806274,
+          "physics_probability": 0.4484974593354003,
+          "combined_probability": 0.5801858714784742,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2795025408267975,
+          "future_ndvi": 0.23803505301475525,
+          "future_ndmi": -0.002595872851088643,
+          "future_ndwi": -0.26352986693382263,
+          "trust_score": 0.20007868405287835,
+          "image_path": "real_region_test_images_more\\rajasthan_05.png"
+        },
+        {
+          "lat": 2896235.0,
+          "lon": 749895.0,
+          "scene_dates": [
+            "2025-11-25",
+            "2025-11-30",
+            "2025-12-10"
+          ],
+          "model_probability": 0.27487075328826904,
+          "physics_probability": 0.43201632910354243,
+          "combined_probability": 0.5610297392053069,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2611066699028015,
+          "future_ndvi": 0.23774179816246033,
+          "future_ndmi": 0.012206482701003551,
+          "future_ndwi": -0.2880159616470337,
+          "trust_score": 0.20479397225335266,
+          "image_path": "real_region_test_images_more\\rajasthan_01.png"
+        }
+      ]
+    },
+    "Namibia North": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.18660463392734528,
+      "median_model_probability": 0.21755944192409515,
+      "mean_physics_probability": 0.5614633560180664,
+      "median_physics_probability": 0.528138279914856,
+      "mean_combined_probability": 0.6965866088867188,
+      "median_combined_probability": 0.6738850474357605,
+      "mean_confidence": 0.2689588963985443,
+      "mean_ndvi": 0.2201351672410965,
+      "mean_ndmi": -0.0746329054236412,
+      "mean_ndwi": -0.2333456426858902,
+      "patches": [
+        {
+          "lat": 8092825.0,
+          "lon": 747405.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.21755944192409515,
+          "physics_probability": 0.6457248435462589,
+          "combined_probability": 0.7475923520348629,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.3024829924106598,
+          "future_ndvi": 0.2185172587633133,
+          "future_ndmi": -0.08374182134866714,
+          "future_ndwi": -0.2275245189666748,
+          "trust_score": 0.2975180050174959,
+          "image_path": "real_region_test_images_more\\namibia_north_01.png"
+        },
+        {
+          "lat": 8047095.0,
+          "lon": 647085.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.11166203767061234,
+          "physics_probability": 0.5281382974283758,
+          "combined_probability": 0.6738850442670734,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.25104206800460815,
+          "future_ndvi": 0.2092818170785904,
+          "future_ndmi": -0.0637679174542427,
+          "future_ndwi": -0.2154417186975479,
+          "trust_score": 0.16339760508807272,
+          "image_path": "real_region_test_images_more\\namibia_north_03.png"
+        },
+        {
+          "lat": 7916185.0,
+          "lon": 487495.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.23059244453907013,
+          "physics_probability": 0.5105268619139425,
+          "combined_probability": 0.6682824557491365,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2533515691757202,
+          "future_ndvi": 0.232606440782547,
+          "future_ndmi": -0.07638897746801376,
+          "future_ndwi": -0.25707072019577026,
+          "trust_score": 0.14881753876919435,
+          "image_path": "real_region_test_images_more\\namibia_north_00.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "drier",
+      "selected_candidates": [
+        {
+          "lat": 8092825.0,
+          "lon": 747405.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.21755944192409515,
+          "physics_probability": 0.6457248435462589,
+          "combined_probability": 0.7475923520348629,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.3024829924106598,
+          "future_ndvi": 0.2185172587633133,
+          "future_ndmi": -0.08374182134866714,
+          "future_ndwi": -0.2275245189666748,
+          "trust_score": 0.2975180050174959,
+          "image_path": "real_region_test_images_more\\namibia_north_01.png"
+        },
+        {
+          "lat": 8047095.0,
+          "lon": 647085.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.11166203767061234,
+          "physics_probability": 0.5281382974283758,
+          "combined_probability": 0.6738850442670734,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.25104206800460815,
+          "future_ndvi": 0.2092818170785904,
+          "future_ndmi": -0.0637679174542427,
+          "future_ndwi": -0.2154417186975479,
+          "trust_score": 0.16339760508807272,
+          "image_path": "real_region_test_images_more\\namibia_north_03.png"
+        },
+        {
+          "lat": 7916185.0,
+          "lon": 487495.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.23059244453907013,
+          "physics_probability": 0.5105268619139425,
+          "combined_probability": 0.6682824557491365,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2533515691757202,
+          "future_ndvi": 0.232606440782547,
+          "future_ndmi": -0.07638897746801376,
+          "future_ndwi": -0.25707072019577026,
+          "trust_score": 0.14881753876919435,
+          "image_path": "real_region_test_images_more\\namibia_north_00.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 7834635.0,
+          "lon": 581465.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.8887448906898499,
+          "physics_probability": 0.48410332153448954,
+          "combined_probability": 0.7755169555808984,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3032535910606384,
+          "future_ndvi": 0.21108798682689667,
+          "future_ndmi": -0.0721602812409401,
+          "future_ndwi": -0.2845083475112915,
+          "trust_score": 0.18109648570231057,
+          "image_path": "real_region_test_images_more\\namibia_north_05.png"
+        },
+        {
+          "lat": 8092825.0,
+          "lon": 747405.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.21755944192409515,
+          "physics_probability": 0.6457248435462589,
+          "combined_probability": 0.7475923520348629,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.3024829924106598,
+          "future_ndvi": 0.2185172587633133,
+          "future_ndmi": -0.08374182134866714,
+          "future_ndwi": -0.2275245189666748,
+          "trust_score": 0.2975180050174959,
+          "image_path": "real_region_test_images_more\\namibia_north_01.png"
+        },
+        {
+          "lat": 7867005.0,
+          "lon": 647385.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.7966328263282776,
+          "physics_probability": 0.46919848162765,
+          "combined_probability": 0.713978402059685,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3666045665740967,
+          "future_ndvi": 0.23777347803115845,
+          "future_ndmi": -0.05981487035751343,
+          "future_ndwi": -0.27106407284736633,
+          "trust_score": 0.2293538781508682,
+          "image_path": "real_region_test_images_more\\namibia_north_02.png"
+        },
+        {
+          "lat": 8047095.0,
+          "lon": 647085.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.11166203767061234,
+          "physics_probability": 0.5281382974283758,
+          "combined_probability": 0.6738850442670734,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.25104206800460815,
+          "future_ndvi": 0.2092818170785904,
+          "future_ndmi": -0.0637679174542427,
+          "future_ndwi": -0.2154417186975479,
+          "trust_score": 0.16339760508807272,
+          "image_path": "real_region_test_images_more\\namibia_north_03.png"
+        },
+        {
+          "lat": 7916185.0,
+          "lon": 487495.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.23059244453907013,
+          "physics_probability": 0.5105268619139425,
+          "combined_probability": 0.6682824557491365,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2533515691757202,
+          "future_ndvi": 0.232606440782547,
+          "future_ndmi": -0.07638897746801376,
+          "future_ndwi": -0.25707072019577026,
+          "trust_score": 0.14881753876919435,
+          "image_path": "real_region_test_images_more\\namibia_north_00.png"
+        },
+        {
+          "lat": 7971015.0,
+          "lon": 568765.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.442422091960907,
+          "physics_probability": 0.47252205595996066,
+          "combined_probability": 0.6223637382887155,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.24544905126094818,
+          "future_ndvi": 0.23072730004787445,
+          "future_ndmi": -0.03880820423364639,
+          "future_ndwi": -0.2633180618286133,
+          "trust_score": 0.15972712782955692,
+          "image_path": "real_region_test_images_more\\namibia_north_04.png"
+        }
+      ]
+    },
+    "South Africa Free State": {
+      "samples": 3,
+      "status": "ok",
+      "mean_model_probability": 0.8503445982933044,
+      "median_model_probability": 0.9916120767593384,
+      "mean_physics_probability": 0.5959222316741943,
+      "median_physics_probability": 0.610703706741333,
+      "mean_combined_probability": 0.8066570162773132,
+      "median_combined_probability": 0.8655162453651428,
+      "mean_confidence": 0.3573281764984131,
+      "mean_ndvi": 0.22133469581604004,
+      "mean_ndmi": -0.0825115516781807,
+      "mean_ndwi": -0.26620933413505554,
+      "patches": [
+        {
+          "lat": 6722355.0,
+          "lon": 405475.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.9916120767593384,
+          "physics_probability": 0.6226940144041567,
+          "combined_probability": 0.8676757991076474,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.43205806612968445,
+          "future_ndvi": 0.21146681904792786,
+          "future_ndmi": -0.0886954590678215,
+          "future_ndwi": -0.2729548513889313,
+          "trust_score": 0.3480565493350675,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_02.png"
+        },
+        {
+          "lat": 6717365.0,
+          "lon": 451235.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.9949559569358826,
+          "physics_probability": 0.6107037266302421,
+          "combined_probability": 0.8655162357804986,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3960084915161133,
+          "future_ndvi": 0.21347162127494812,
+          "future_ndmi": -0.0855913758277893,
+          "future_ndwi": -0.2521868646144867,
+          "trust_score": 0.3174380243010802,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_00.png"
+        },
+        {
+          "lat": 6751365.0,
+          "lon": 360535.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.5644657611846924,
+          "physics_probability": 0.5543689627792605,
+          "combined_probability": 0.6867788867791884,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.24391795694828033,
+          "future_ndvi": 0.23906564712524414,
+          "future_ndmi": -0.07324782013893127,
+          "future_ndwi": -0.27348631620407104,
+          "trust_score": 0.18308694282288868,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_01.png"
+        }
+      ],
+      "candidate_count": 6,
+      "expected": "drier",
+      "selected_candidates": [
+        {
+          "lat": 6722355.0,
+          "lon": 405475.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.9916120767593384,
+          "physics_probability": 0.6226940144041567,
+          "combined_probability": 0.8676757991076474,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.43205806612968445,
+          "future_ndvi": 0.21146681904792786,
+          "future_ndmi": -0.0886954590678215,
+          "future_ndwi": -0.2729548513889313,
+          "trust_score": 0.3480565493350675,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_02.png"
+        },
+        {
+          "lat": 6717365.0,
+          "lon": 451235.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.9949559569358826,
+          "physics_probability": 0.6107037266302421,
+          "combined_probability": 0.8655162357804986,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3960084915161133,
+          "future_ndvi": 0.21347162127494812,
+          "future_ndmi": -0.0855913758277893,
+          "future_ndwi": -0.2521868646144867,
+          "trust_score": 0.3174380243010802,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_00.png"
+        },
+        {
+          "lat": 6751365.0,
+          "lon": 360535.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.5644657611846924,
+          "physics_probability": 0.5543689627792605,
+          "combined_probability": 0.6867788867791884,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.24391795694828033,
+          "future_ndvi": 0.23906564712524414,
+          "future_ndmi": -0.07324782013893127,
+          "future_ndwi": -0.27348631620407104,
+          "trust_score": 0.18308694282288868,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_01.png"
+        }
+      ],
+      "all_candidates": [
+        {
+          "lat": 6722355.0,
+          "lon": 405475.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.9916120767593384,
+          "physics_probability": 0.6226940144041567,
+          "combined_probability": 0.8676757991076474,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.43205806612968445,
+          "future_ndvi": 0.21146681904792786,
+          "future_ndmi": -0.0886954590678215,
+          "future_ndwi": -0.2729548513889313,
+          "trust_score": 0.3480565493350675,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_02.png"
+        },
+        {
+          "lat": 6717365.0,
+          "lon": 451235.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.9949559569358826,
+          "physics_probability": 0.6107037266302421,
+          "combined_probability": 0.8655162357804986,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.3960084915161133,
+          "future_ndvi": 0.21347162127494812,
+          "future_ndmi": -0.0855913758277893,
+          "future_ndwi": -0.2521868646144867,
+          "trust_score": 0.3174380243010802,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_00.png"
+        },
+        {
+          "lat": 6959125.0,
+          "lon": 275765.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.9562991261482239,
+          "physics_probability": 0.49531406555644686,
+          "combined_probability": 0.8128084938896205,
+          "fusion_mode": "balanced",
+          "model_confidence": 0.4869227707386017,
+          "future_ndvi": 0.21965359151363373,
+          "future_ndmi": -0.0819658413529396,
+          "future_ndwi": -0.2986706495285034,
+          "trust_score": 0.2720248649054288,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_04.png"
+        },
+        {
+          "lat": 6751365.0,
+          "lon": 360535.0,
+          "scene_dates": [
+            "2025-12-19",
+            "2025-12-19",
+            "2025-12-19"
+          ],
+          "model_probability": 0.5644657611846924,
+          "physics_probability": 0.5543689627792605,
+          "combined_probability": 0.6867788867791884,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.24391795694828033,
+          "future_ndvi": 0.23906564712524414,
+          "future_ndmi": -0.07324782013893127,
+          "future_ndwi": -0.27348631620407104,
+          "trust_score": 0.18308694282288868,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_01.png"
+        },
+        {
+          "lat": 6830845.0,
+          "lon": 361675.0,
+          "scene_dates": [
+            "2025-12-24",
+            "2025-12-24",
+            "2025-12-24"
+          ],
+          "model_probability": 0.019348785281181335,
+          "physics_probability": 0.5397788856291468,
+          "combined_probability": 0.6852817089550541,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.2567453384399414,
+          "future_ndvi": 0.21858157217502594,
+          "future_ndmi": -0.07727506756782532,
+          "future_ndwi": -0.2181040644645691,
+          "trust_score": 0.17701093320819988,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_03.png"
+        },
+        {
+          "lat": 6943255.0,
+          "lon": 605705.0,
+          "scene_dates": [
+            "2025-12-26",
+            "2025-12-26",
+            "2025-12-26"
+          ],
+          "model_probability": 3.065722557948902e-05,
+          "physics_probability": 0.4591487544955373,
+          "combined_probability": 0.5697656855346964,
+          "fusion_mode": "dryness_boosted",
+          "model_confidence": 0.47333618998527527,
+          "future_ndvi": 0.23031069338321686,
+          "future_ndmi": 0.017119156196713448,
+          "future_ndwi": -0.2200186550617218,
+          "trust_score": 0.2971010254459179,
+          "image_path": "real_region_test_images_more\\south_africa_free_state_05.png"
+        }
+      ]
+    }
+  }
+}

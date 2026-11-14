@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07121f">
+  <meta name="description" content="AURORA-JALADRISHTI interactive drought-monitoring and mission-planning platform.">
+  <title>AURORA-JALADRISHTI | Mission Control</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    :root{color-scheme:dark;--bg:#07121f;--panel:#0d1d2d;--panel2:#11273a;--line:#244258;--text:#e6f0f5;--muted:#91a9b8;--cyan:#54d9ec;--green:#99e38f;--amber:#f7c873;--red:#ff8d7a;--mono:"IBM Plex Mono","Cascadia Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5}.shell{width:min(1440px,calc(100% - 40px));margin:auto}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;background:var(--panel);border-bottom:1px solid var(--line)}.brand{display:flex;align-items:baseline;gap:10px;color:var(--text);text-decoration:none;font-weight:700;letter-spacing:.08em}.brand small{color:var(--cyan);font:10px var(--mono);letter-spacing:.1em}.top-status{color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.08em}.status-dot{display:none}
+    .layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:30px;padding:34px 0 80px}.sidebar{position:sticky;top:30px;height:max-content}.sidebar h1{margin:0 0 8px;font-size:19px;letter-spacing:-.03em}.sidebar p{margin:0 0 25px;color:var(--muted);font-size:12px}.nav{display:grid;gap:2px}.nav button{padding:9px 10px;color:var(--muted);text-align:left;background:transparent;border:0;border-left:2px solid transparent;border-radius:0;cursor:pointer;font:11px var(--mono)}.nav button:hover,.nav button.active{color:var(--text);background:transparent;border-left-color:var(--cyan)}.nav button.active{font-weight:700}.sidebar-note{margin-top:30px;padding:13px;border:1px solid var(--line);border-radius:3px;color:var(--muted);font-size:11px}.sidebar-note strong{display:block;margin-bottom:5px;color:var(--amber);font:10px var(--mono);text-transform:uppercase}
+    main{min-width:0}.hero{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:28px}.eyebrow,.kicker{color:var(--cyan);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}.hero h2{max-width:740px;margin:9px 0 0;font-size:clamp(29px,4vw,55px);line-height:1.05;letter-spacing:-.055em}.hero h2 span{color:var(--cyan)}.hero-note{max-width:280px;color:var(--muted);font-size:12px}.view{display:none}.view.active{display:block}.grid{display:grid;gap:16px}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}    .panel{min-width:0;padding:19px;background:var(--panel);border:1px solid var(--line);border-radius:5px}.panel h3{margin:0 0 5px;font-size:14px}.panel p{margin:0;color:var(--muted);font-size:12px}.metric{padding:16px;border:1px solid var(--line);border-radius:5px;background:#0c1a28}.metric-label{color:var(--muted);font:10px var(--mono);text-transform:uppercase}.metric-value{margin-top:7px;color:var(--cyan);font:23px var(--mono)}.metric-note{color:var(--muted);font-size:10px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:30px 0 12px}.section-head h3{margin:0;font-size:15px}.tag{padding:4px 7px;color:var(--muted);border:1px solid var(--line);border-radius:3px;font:9px var(--mono);text-transform:uppercase}.button{padding:10px 14px;color:var(--bg);background:var(--cyan);border:0;border-radius:4px;cursor:pointer;font-weight:800;font-size:11px}.button:hover{filter:brightness(1.1)}.button.secondary{color:var(--text);background:#173449;border:1px solid #2d5a70}.button:disabled{cursor:wait;opacity:.5}
+    #map{height:390px;border:1px solid var(--line);border-radius:7px;background:#0b1c2a}.leaflet-container{font-family:var(--sans);background:#0b1c2a}.leaflet-control-attribution{background:rgba(7,18,31,.8)!important;color:var(--muted)!important}.leaflet-control-attribution a{color:var(--cyan)!important}.leaflet-popup-content-wrapper,.leaflet-popup-tip{color:var(--text);background:var(--panel)}.risk-marker{display:grid;place-items:center;width:25px;height:25px;border:2px solid #dffcff;border-radius:50%;box-shadow:0 0 0 4px rgba(84,217,236,.22);font:9px var(--mono)}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}.region-card{padding:14px;background:var(--panel2);border:1px solid var(--line);border-radius:6px;cursor:pointer}.region-card:hover{border-color:var(--cyan);transform:translateY(-1px)}.region-top{display:flex;justify-content:space-between;gap:10px}.region-name{font-weight:700;font-size:13px}.risk{font:18px var(--mono)}.risk.high{color:var(--red)}.risk.medium{color:var(--amber)}.risk.low{color:var(--green)}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.chip{padding:3px 6px;color:var(--muted);background:#0b1b2b;border:1px solid var(--line);border-radius:3px;font:9px var(--mono)}.small{color:var(--muted);font-size:11px}.notice{padding:11px 13px;color:#cceaf0;background:rgba(84,217,236,.07);border:1px solid #276276;border-radius:5px;font-size:11px}.warning{color:#ffe0a6;background:rgba(247,200,115,.07);border-color:#765b29}.error{color:#ffc4b9;background:rgba(255,141,122,.07);border-color:#78443d}
+    .controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.control label{display:block;margin-bottom:5px;color:var(--muted);font:10px var(--mono);text-transform:uppercase}.control input,.control select{width:100%;padding:9px;color:var(--text);background:#0a1a29;border:1px solid var(--line);border-radius:4px}.range-value{float:right;color:var(--cyan)}.bar{height:8px;overflow:hidden;background:#07131f;border-radius:99px}.bar span{display:block;height:100%;background:var(--cyan);border-radius:inherit}.decision{border-left:3px solid var(--green)}.decision h3{font-size:18px}.decision strong{color:var(--green)}.candidate-list{display:grid;gap:6px;max-height:300px;overflow:auto}.candidate{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:9px;border-bottom:1px solid var(--line);font-size:11px}.candidate:last-child{border-bottom:0}.candidate .utility{color:var(--cyan);font-family:var(--mono)}.timeline{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:17px}.slot{min-height:54px;padding:7px;background:#0a1a29;border:1px solid var(--line);border-radius:4px;color:var(--muted);font:9px var(--mono)}.slot.selected{border-color:var(--green);background:rgba(153,227,143,.12);color:var(--green)}
+    .band-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:15px}.band{height:100px;padding:8px;display:flex;align-items:end;border:1px solid rgba(255,255,255,.12);border-radius:4px;font:10px var(--mono);background:linear-gradient(145deg,#244b66,#0b1c2a)}.band:nth-child(2){background:linear-gradient(145deg,#376d77,#0b1c2a)}.band:nth-child(3){background:linear-gradient(145deg,#7e8f5d,#0b1c2a)}.band:nth-child(4){background:linear-gradient(145deg,#ad783f,#0b1c2a)}.band:nth-child(5){background:linear-gradient(145deg,#865c94,#0b1c2a)}.band:nth-child(6){background:linear-gradient(145deg,#d17e55,#0b1c2a)}.architecture{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center}.arch-node{min-height:100px;padding:12px;border:1px solid #296079;border-radius:6px;background:#10283a;cursor:pointer}.arch-node:hover{border-color:var(--cyan)}.arch-node strong{display:block;margin-bottom:7px;color:var(--cyan);font-size:12px}.arch-node span{color:var(--muted);font-size:10px}.arrow{color:var(--cyan);text-align:center;font-size:20px}.table{width:100%;border-collapse:collapse;font-size:11px}.table th,.table td{padding:9px;text-align:left;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font:9px var(--mono);text-transform:uppercase}.footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.modal{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.7)}.modal.open{display:grid}.modal-card{width:min(560px,100%);padding:22px;background:var(--panel);border:1px solid var(--cyan);border-radius:8px}.modal-close{float:right;color:var(--muted);background:transparent;border:0;cursor:pointer;font-size:20px}
+    .band-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-top:15px}.band{height:100px;padding:8px;display:flex;align-items:end;border:1px solid #b8c5bd;border-radius:3px;font:10px var(--mono);background:#dce7df;color:#244b44}.band:nth-child(2){background:#d4e4df}.band:nth-child(3){background:#e2e8d1}.band:nth-child(4){background:#eadcc7}.band:nth-child(5){background:#e1d9e7}.band:nth-child(6){background:#eedbd0}.architecture{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:center}.arch-node{min-height:100px;padding:12px;border:1px solid var(--line);border-radius:3px;background:var(--panel2);cursor:pointer}.arch-node:hover{border-color:var(--cyan)}.arch-node strong{display:block;margin-bottom:7px;color:var(--cyan);font-size:12px}.arch-node span{color:var(--muted);font-size:10px}.arrow{color:var(--cyan);text-align:center;font-size:20px}.table{width:100%;border-collapse:collapse;font-size:11px}.table th,.table td{padding:9px;text-align:left;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font:9px var(--mono);text-transform:uppercase}.footer{margin-top:50px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:10px}.modal{position:fixed;inset:0;z-index:50;display:none;place-items:center;padding:20px;background:rgba(23,37,43,.35)}.modal.open{display:grid}.modal-card{width:min(560px,100%);padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:4px}.modal-close{float:right;color:var(--muted);background:transparent;border:0;cursor:pointer;font-size:20px}
+    .risk-marker{box-shadow:none}.band,.band:nth-child(n){background:#e5ece7;color:#244b44}.arch-node{background:var(--panel2);border-color:var(--line)}.modal-card{border-color:var(--line)}
+    .band,.band:nth-child(n){position:relative;height:132px;padding:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;overflow:hidden;background:#10283a;color:#f3fbff;border-color:#376176}.band img{flex:1;min-height:0;margin:0!important}.band figcaption{padding:7px 8px;background:rgba(4,14,24,.96);color:#f3fbff;font:700 10px/1.35 var(--mono);letter-spacing:.01em}.band figcaption small{color:#bfe7ef;font:400 10px/1.35 var(--mono)}
+    @media(max-width:1050px){.layout{grid-template-columns:1fr}.sidebar{position:static}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap}.sidebar-note{display:none}.grid-4{grid-template-columns:repeat(2,1fr)}.architecture{grid-template-columns:repeat(3,1fr)}.arrow{display:none}}
+    @media(max-width:680px){.shell{width:min(100% - 24px,1440px)}.top-status{display:none}.hero{display:block}.hero-note{margin-top:15px}.grid-4,.grid-3,.grid-2,.controls{grid-template-columns:1fr}.band-grid{grid-template-columns:repeat(3,1fr)}.architecture{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(4,1fr)}#map{height:300px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell" style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px">
+      <a class="brand" href="index.html"><span>AURORA <small>JALADRISHTI</small></span></a>
+      <div class="top-status">LOCAL RESEARCH BUILD · DATA SNAPSHOT</div>
+    </div>
+  </header>
+  <div class="shell layout">
+    <aside class="sidebar">
+      <h1>Mission Control</h1>
+      <p>Inspect the drought-monitoring pipeline and run auditable observation-planning simulations.</p>
+      <nav class="nav" aria-label="Platform sections">
+        <button class="active" data-view="overview">01 · Overview</button>
+        <button data-view="monitoring">02 · Earth observation</button>
+        <button data-view="spectral">03 · Spectral lab</button>
+        <button data-view="drought">04 · Drought lab</button>
+        <button data-view="mission">05 · Mission control</button>
+        <button data-view="scenarios">06 · Scenarios</button>
+        <button data-view="research">07 · Research</button>
+        <button data-view="architecture">08 · Architecture</button>
+      </nav>
+      <div class="sidebar-note"><strong>Integrity note</strong>Risk outputs are model-derived and uncalibrated. Mission observations and belief updates are simulations, not live spacecraft telemetry.</div>
+    </aside>
+    <main>
+      <div class="hero">
+        <div><div class="eyebrow">AURORA-JALADRISHTI / PROJECT VIEW</div><h2>A practical look at the <span>mission pipeline.</span></h2></div>
+        <p class="hero-note">This is a working research demo: inspect the data, check the model outputs, and see how the planner responds to tighter resources.</p>
+      </div>
+
+      <section id="overview" class="view active">
+        <div class="grid grid-4" id="overview-metrics"></div>
+        <div class="section-head"><h3>Mission overview</h3><span class="tag">data snapshot</span></div>
+        <div class="grid grid-2"><div class="panel"><h3>What is available here</h3><p style="margin-bottom:15px">The page reads the bundled forecast snapshot and lets you replay the planner without downloading the large checkpoints.</p><div class="notice">Available: regional drought outputs, coordinates, planner inputs, verified production metrics, and resource scenarios.</div><div class="notice warning" style="margin-top:10px">Not included here: direct RGB upload inference, raw spectral tensors, model checkpoints, or live spacecraft telemetry.</div></div><div class="panel"><h3>Selected observation</h3><div id="overview-selection" class="decision" style="margin-top:14px;padding:13px">Run Mission Control to select a target.</div></div></div>
+        <div class="section-head"><h3>Highest-risk regions in the snapshot</h3><button class="button secondary" data-jump="monitoring">Inspect all regions</button></div><div id="overview-regions" class="cards"></div>
+      </section>
+
+      <section id="monitoring" class="view">
+        <div class="section-head"><h3>Earth observation and drought monitoring</h3><span class="tag">Sentinel-2-derived snapshot</span></div>
+        <div class="panel"><div id="map" aria-label="Map of bundled regional outputs"></div><p style="margin-top:10px">Markers use coordinates stored with the bundled regional outputs. They are not satellite positions or orbital tracks.</p></div>
+        <div class="section-head"><h3>Regional model outputs</h3><input id="region-filter" placeholder="Filter regions…" style="padding:9px;color:var(--text);background:#0a1a29;border:1px solid var(--line);border-radius:4px"></div><div id="monitoring-regions" class="cards"></div>
+      </section>
+
+      <section id="spectral" class="view">
+        <div class="section-head"><h3>Spectral reconstruction</h3><span class="tag">local run completed</span></div>
+        <div class="grid grid-2"><div class="panel"><h3>What is available</h3><p>The public release records the verified `SpectralNetV10` result, but the large tensor dataset and checkpoint are intentionally excluded from GitHub. This page reports the latest local evaluation rather than fabricating an image prediction.</p><div class="grid grid-2" style="margin-top:16px"><div class="metric"><div class="metric-label">End-to-end RMSE</div><div class="metric-value">0.02517</div><div class="metric-note">latest local run</div></div><div class="metric"><div class="metric-label">Output channels</div><div class="metric-value">6</div><div class="metric-note">reconstructed bands</div></div></div></div><div class="panel"><h3>Six-band output layout</h3><p>Band labels only; no pixels are generated by this browser page.</p><div class="band-grid"><div class="band">B02 · blue</div><div class="band">B03 · green</div><div class="band">B04 · red</div><div class="band">B08 · NIR</div><div class="band">B11 · SWIR</div><div class="band">B12 · SWIR</div></div></div></div>
+        <div class="section-head"><h3>Try a reconstruction</h3><span class="tag">local checkpoint</span></div><div class="panel"><form id="reconstruct-form"><input id="image-upload" type="file" accept="image/png,image/jpeg"><button id="sample-image" class="button secondary" type="button" style="margin-left:8px">Use repository sample</button><button class="button" type="submit" style="margin-left:8px">Run SpectralNetV10</button></form><p id="reconstruct-status" class="small" style="margin-top:12px">Use the included 64×64 RGB test sample or upload a PNG/JPEG. The local service runs the restored checkpoint and returns six actual output bands.</p><div id="reconstruct-result" class="band-grid" hidden></div></div>
+        <div class="section-head"><h3>Local pipeline</h3></div><div class="panel"><p>The tensor dataset and warm-start checkpoint were restored and evaluated with `FINAL_PROJECT_NASA\run_project.py`. The generated predictions and evaluation artifacts are under `FINAL_PROJECT_NASA\artifacts\`.</p></div>
+      </section>
+
+      <section id="drought" class="view">
+        <div class="section-head"><h3>Drought prediction lab</h3><span class="tag">bundled forecast rows</span></div>
+        <div class="grid grid-2"><div class="panel"><h3>Inspect a region</h3><select id="drought-region" style="width:100%;padding:10px;color:var(--text);background:#0a1a29;border:1px solid var(--line);border-radius:4px"></select><div id="drought-detail" style="margin-top:16px"></div></div><div class="panel"><h3>Interpretation</h3><p>The drought index is a composite ranking signal combining a classifier output and physics-derived spectral stress. The confidence head is explicitly uncalibrated and must not be read as a probability of correctness.</p><div class="notice warning" style="margin-top:15px">The 30-day target spectrum is a linear extrapolation and the training labels are predominantly proxy-derived.</div></div></div>
+      </section>
+
+      <section id="mission" class="view">
+        <div class="section-head"><h3>AURORA mission control</h3><span class="tag">auditable browser replay</span></div>
+        <div class="panel"><p>Adjust resources and run the same candidate-ranking logic as `src/integrated_mission.py`: information gain is weighted by drought risk and uncertainty, cloud risk reduces value, and utility is information gain per energy.</p><div class="controls" style="margin-top:18px"><div class="control"><label>Battery Wh <span class="range-value" id="battery-value">55</span></label><input id="battery" type="range" min="11" max="55" step=".5" value="55"></div><div class="control"><label>Storage used MB <span class="range-value" id="storage-value">0</span></label><input id="storage" type="range" min="0" max="96" step="1" value="0"></div><div class="control"><label>Capacity MB <span class="range-value" id="capacity-value">96</span></label><input id="capacity" type="range" min="8" max="256" step="8" value="96"></div><div class="control"><label>Region filter</label><select id="mission-region"><option value="">All regions</option></select></div></div><button id="run-plan" class="button" style="margin-top:17px">Run mission planner</button></div>
+        <div id="mission-result" class="grid grid-2" style="margin-top:16px"><div class="panel"><h3>Waiting for a run</h3><p>Change constraints and execute the planner to see the selected observation.</p></div></div>
+      </section>
+
+      <section id="scenarios" class="view">
+        <div class="section-head"><h3>Scenario testing</h3><span class="tag">same rows · changed constraints</span></div><div class="panel"><p>These scenarios apply the planner to the same bundled science state with documented resource changes. They are planning simulations, not new model evaluations.</p><div id="scenario-table" style="margin-top:14px"></div></div><div class="panel" style="margin-top:16px"><h3>Baseline comparison status</h3><p>The public interactive bundle does not include the full baseline-policy result tables from the research simulator. It will not invent a comparison. The reproducible offline AURORA-SR experiment and its figures remain in the release research package.</p></div>
+      </section>
+
+      <section id="research" class="view">
+        <div class="section-head"><h3>Research and verified results</h3><span class="tag">production run</span></div><div class="grid grid-4" id="research-metrics"></div><div class="panel" style="margin-top:16px"><h3>Scientific limitations</h3><ul class="small"><li>Validation is not geographically disjoint.</li><li>Drought labels are predominantly proxy-derived where independent TerraClimate labels are unavailable.</li><li>Some datasets and checkpoints are excluded from GitHub because of size.</li><li>Mission resources, access windows, cloud probability, and belief updates are simulation constructs.</li><li>This is not an operational satellite system, flight software, NASA endorsement, or a substitute for field measurements.</li></ul></div>
+      </section>
+
+      <section id="architecture" class="view">
+        <div class="section-head"><h3>Technical architecture</h3><span class="tag">click a component</span></div><div class="panel"><div class="architecture"><button class="arch-node" data-arch="rgb"><strong>RGB observation</strong><span>validated image input</span></button><span class="arrow">→</span><button class="arch-node" data-arch="spectral"><strong>SpectralNetV10</strong><span>six-band reconstruction</span></button><span class="arrow">→</span><button class="arch-node" data-arch="drought"><strong>Temporal model</strong><span>drought-risk estimate</span></button><span class="arrow">→</span><button class="arch-node" data-arch="planner"><strong>AURORA planner</strong><span>resource-aware target</span></button></div><div class="notice" style="margin-top:18px">Click a node to inspect its role and repository implementation.</div></div>
+      </section>
+      <footer class="footer">AURORA-JALADRISHTI is a research prototype. Distinguish observed data, model-derived outputs, and mission simulation. <a href="index.html" style="color:var(--cyan)">Open rainfall observatory</a> · <a href="https://github.com/Dhruv-Ranjan/AURORA_JALADRISHTI" style="color:var(--cyan)">Source repository</a></footer>
+    </main>
+  </div>
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button id="modal-close" class="modal-close" aria-label="Close">×</button><h3 id="modal-title"></h3><p id="modal-body"></p></div></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    (() => {
+      const $ = (id) => document.getElementById(id);
+      let regions = [];
+      let map;
+      const metric = (label, value, note) => `<div class="metric"><div class="metric-label">${label}</div><div class="metric-value">${value}</div><div class="metric-note">${note}</div></div>`;
+      const riskClass = (value) => value >= 70 ? "high" : value >= 40 ? "medium" : "low";
+      const candidate = (row, resources) => {
+        const risk = Math.max(0, Math.min(1, Number(row.drought_index || 0) / 100));
+        const confidence = Math.max(0, Math.min(1, Number(row.confidence || 0)));
+        const uncertainty = Math.min(1, 1 - confidence + (row.scoring_mode === "sparse_vegetation_fallback" ? .15 : 0));
+        const cloud = Math.max(0, Math.min(1, .18 + .55 * (1 - confidence)));
+        const gain = risk * uncertainty * (1 - cloud);
+        const energy = 1.85;
+        const feasible = resources.battery - energy >= 11 && resources.storage + 8 <= resources.capacity;
+        return {...row, cloud_probability: cloud, information_gain: gain, utility: feasible ? gain / energy : 0, energy_wh: energy, data_mb: 8, feasible, rejection_reason: feasible ? null : resources.battery - energy < 11 ? "battery reserve" : "storage capacity"};
+      };
+      const plan = (filter = "", resources = {battery:55, storage:0, capacity:96}) => {
+        const rows = regions.filter(row => !filter || row.region.toLowerCase().includes(filter.toLowerCase())).map(row => candidate(row, resources)).sort((a,b) => b.utility - a.utility);
+        const selection = rows.find(row => row.feasible) || null;
+        return {rows, selection, before: resources, after: selection ? {battery: +(resources.battery-selection.energy_wh).toFixed(2), storage: +(resources.storage+selection.data_mb).toFixed(2), capacity: resources.capacity} : resources};
+      };
+      function renderCards(target, rows) {
+        $(target).innerHTML = rows.map(row => `<article class="region-card" data-region="${row.region}"><div class="region-top"><span class="region-name">${row.region}</span><span class="risk ${riskClass(row.drought_index)}">${Number(row.drought_index).toFixed(1)}</span></div><div class="small">${row.country || "Global"} · ${row.scenes_used || 0} scenes · ${row.forecast_horizon_days || 0}d horizon</div><div class="chips"><span class="chip">model ${(Number(row.classifier_score || 0)*100).toFixed(0)}</span><span class="chip">physics ${(Number(row.physics_score || 0)*100).toFixed(0)}</span><span class="chip">NDVI ${Number(row.ndvi || 0).toFixed(2)}</span></div></article>`).join("");
+        document.querySelectorAll(".region-card").forEach(card => card.addEventListener("click", () => selectRegion(card.dataset.region)));
+      }
+      function selectRegion(name) {
+        const row = regions.find(item => item.region === name); if (!row) return;
+        $("drought-region").value = name; renderDrought(row);
+        document.querySelector('[data-view="drought"]').click();
+      }
+      function renderDrought(row) {
+        $("drought-detail").innerHTML = `<div class="grid grid-2">${metric("Risk index", Number(row.drought_index).toFixed(1)+"/100", "ranking signal, not probability")}${metric("Uncalibrated head", (Number(row.confidence)*100).toFixed(0)+"%", "not calibrated correctness")}${metric("NDVI", Number(row.ndvi).toFixed(3), "derived spectral feature")}${metric("Scenes", row.scenes_used || "—", "available observations")}</div><div class="notice" style="margin-top:14px">${row.scoring_mode === "sparse_vegetation_fallback" ? "Sparse-vegetation fallback scoring was used." : "Vegetation scoring was used."} Forecast target: ${row.forecast_target_date || "not supplied"}.</div>`;
+      }
+      function renderPlan(result) {
+        const selected = result.selection;
+        $("mission-result").innerHTML = `<div class="panel decision">${selected ? `<h3>Selected: <strong>${selected.region}</strong></h3><p>Utility <strong>${selected.utility.toFixed(4)}</strong> · information gain ${selected.information_gain.toFixed(4)} · cloud heuristic ${(selected.cloud_probability*100).toFixed(1)}%</p><div class="grid grid-2" style="margin-top:15px">${metric("Battery after", result.after.battery+" Wh", `before ${result.before.battery} Wh`)}${metric("Storage after", result.after.storage+" MB", `capacity ${result.after.capacity} MB`)}</div>` : `<h3>No feasible observation</h3><p>Every candidate violates the current battery reserve or storage constraint.</p>`}<div class="timeline">${Array.from({length:8},(_,i)=>`<div class="slot ${selected && i===2 ? "selected":""}">${selected && i===2 ? "SELECTED<br>"+selected.region : "window "+(i+1)}</div>`).join("")}</div></div><div class="panel"><h3>Ranked candidates</h3><div class="candidate-list">${result.rows.slice(0,12).map(row=>`<div class="candidate"><span>${row.region}</span><span class="utility">${row.utility.toFixed(4)}</span><span class="small">${row.feasible ? "feasible" : row.rejection_reason}</span></div>`).join("")}</div></div>`;
+        $("overview-selection").innerHTML = selected ? `<h3>${selected.region}</h3><p>Expected information gain <strong>${selected.information_gain.toFixed(3)}</strong>; cost ${selected.energy_wh.toFixed(2)} Wh and ${selected.data_mb.toFixed(1)} MB.</p>` : "<p>No feasible target under the current resources.</p>";
+      }
+      function runPlanner() {
+        const resources = {battery:Number($("battery").value), storage:Number($("storage").value), capacity:Number($("capacity").value)};
+        const result = plan($("mission-region").value, resources); renderPlan(result);
+      }
+      function renderScenarios() {
+        const scenarios = [["Nominal",55,0,96],["Battery stress",15,0,96],["Storage stress",55,88,96],["Cloud stress",55,0,96]];
+        $("scenario-table").innerHTML = `<table class="table"><thead><tr><th>Scenario</th><th>Selected</th><th>Utility</th><th>Battery after</th><th>Storage after</th></tr></thead><tbody>${scenarios.map(([name,battery,storage,capacity])=>{const result=plan("",{battery,storage,capacity});return `<tr><td>${name}</td><td>${result.selection ? result.selection.region : "none"}</td><td>${result.selection ? result.selection.utility.toFixed(4) : "—"}</td><td>${result.after.battery} Wh</td><td>${result.after.storage} MB</td></tr>`}).join("")}</tbody></table>`;
+      }
+      function renderMap() {
+        if (!window.L) return;
+        map = L.map("map").setView([10,0],2); L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap contributors"}).addTo(map);
+        regions.filter(row => Number.isFinite(Number(row.lat)) && Number.isFinite(Number(row.lon)) && Math.abs(Number(row.lat)) <= 90 && Math.abs(Number(row.lon)) <= 180).forEach(row => {const color=Number(row.drought_index)>=70?"#ff8d7a":Number(row.drought_index)>=40?"#f7c873":"#99e38f"; const icon=L.divIcon({className:"",html:`<span class="risk-marker" style="background:${color};color:#07121f">${Number(row.drought_index).toFixed(0)}</span>`,iconSize:[25,25],iconAnchor:[12,12]}); L.marker([row.lat,row.lon],{icon}).addTo(map).bindPopup(`<strong>${row.region}</strong><br>Risk index ${Number(row.drought_index).toFixed(1)}/100`);});
+      }
+      function renderAll() {
+        $("overview-metrics").innerHTML = metric("Regions", regions.length, "bundled forecast rows")+metric("Highest risk", Number(regions[0]?.drought_index || 0).toFixed(1), regions[0]?.region || "unavailable")+metric("Spectral RMSE", "0.02517", "latest local run")+metric("End-to-end F1", "0.9332", "latest local run");
+        $("research-metrics").innerHTML = metric("Accuracy","0.9392","drought validation")+metric("Precision","0.9098","drought validation")+metric("Recall","0.9610","drought validation")+metric("AUC","0.9547","drought validation");
+        renderCards("overview-regions", regions.slice(0,6)); renderCards("monitoring-regions", regions);
+        $("drought-region").innerHTML = regions.map(row=>`<option value="${row.region}">${row.region}</option>`).join("");
+        $("mission-region").innerHTML = `<option value="">All regions</option>`+regions.map(row=>`<option value="${row.region}">${row.region}</option>`).join("");
+        if (regions[0]) renderDrought(regions[0]); renderScenarios(); renderMap();
+      }
+      async function load() { try { const response=await fetch("ai_drought_snapshot.json",{cache:"no-store"}); const payload=await response.json(); regions=Array.isArray(payload)?payload:payload.locations||[]; regions.sort((a,b)=>Number(b.drought_index||0)-Number(a.drought_index||0)); renderAll(); } catch(error) { document.querySelector("main").insertAdjacentHTML("afterbegin",`<div class="notice error">Bundled forecast snapshot unavailable: ${error.message}</div>`); } }
+      document.querySelectorAll(".nav button").forEach(button=>button.addEventListener("click",()=>{document.querySelectorAll(".nav button").forEach(item=>item.classList.remove("active"));button.classList.add("active");document.querySelectorAll(".view").forEach(view=>view.classList.toggle("active",view.id===button.dataset.view));if(map) setTimeout(()=>map.invalidateSize(),50);}));
+      document.querySelectorAll("[data-jump]").forEach(button=>button.addEventListener("click",()=>document.querySelector(`[data-view="${button.dataset.jump}"]`).click()));
+      ["battery","storage","capacity"].forEach(id=>$(id).addEventListener("input",()=>$(id+"-value").textContent=$(id).value));
+      $("run-plan").addEventListener("click",runPlanner); $("drought-region").addEventListener("change",event=>renderDrought(regions.find(row=>row.region===event.target.value)));
+      async function loadStaticReconstruction() {
+        const response = await fetch("demo_assets/reconstruction_sample.json", {cache:"no-store"});
+        if (!response.ok) throw new Error(`Bundled reconstruction sample returned ${response.status}.`);
+        return response.json();
+      }
+      function showReconstruction(payload, staticMode) {
+        const result = $("reconstruct-result");
+        result.innerHTML = payload.bands.map(band => `<figure class="band"><img src="${band.preview}" alt="${band.name} reconstructed preview" style="width:100%;height:72px;object-fit:cover;display:block;margin-bottom:5px"><figcaption>${band.name}<br><small>mean ${band.mean}</small></figcaption></figure>`).join("");
+        result.hidden = false;
+        return staticMode
+          ? "Showing the checked-in verified sample reconstruction. Upload inference is available when mission_api.py is running locally."
+          : `Processed ${payload.original_size[0]}×${payload.original_size[1]} as ${payload.processed_size[0]}×${payload.processed_size[1]}. ${payload.note}`;
+      }
+      $("reconstruct-form").addEventListener("submit", async event => {
+        event.preventDefault();
+        const file = $("image-upload").files[0];
+        if (!file) return;
+        const status = $("reconstruct-status");
+        const result = $("reconstruct-result");
+        const button = event.currentTarget.querySelector("button");
+        const form = new FormData();
+        form.append("image", file);
+        button.disabled = true;
+        status.textContent = "Running the restored checkpoint…";
+        result.hidden = true;
+        try {
+          const response = await fetch("http://127.0.0.1:8000/api/reconstruct", {method:"POST", body:form});
+          const payload = await response.json();
+          if (!response.ok || payload.error) throw new Error(payload.error || `Inference service returned ${response.status}.`);
+          status.textContent = showReconstruction(payload, false);
+        } catch (error) {
+          if (file.name === "test_rgb_sample.png") {
+            try {
+              status.textContent = showReconstruction(await loadStaticReconstruction(), true);
+            } catch (staticError) {
+              status.textContent = `The bundled demonstration could not be loaded: ${staticError.message}`;
+            }
+          } else {
+            status.textContent = "Live upload inference is local-only. Start mission_api.py for arbitrary PNG/JPEG files; use the repository sample for the hosted demo.";
+          }
+        } finally {
+          button.disabled = false;
+        }
+      });
+      $("sample-image").addEventListener("click", async () => {
+        const response = await fetch("demo_assets/test_rgb_sample.png");
+        const blob = await response.blob();
+        const file = new File([blob], "test_rgb_sample.png", {type:"image/png"});
+        const transfer = new DataTransfer();
+        transfer.items.add(file);
+        $("image-upload").files = transfer.files;
+        $("reconstruct-status").textContent = "Repository sample selected. Run SpectralNetV10 to reconstruct it.";
+      });
+      $("region-filter").addEventListener("input",event=>renderCards("monitoring-regions",regions.filter(row=>row.region.toLowerCase().includes(event.target.value.toLowerCase()))));
+      const modal=$("modal"); document.querySelectorAll("[data-arch]").forEach(button=>button.addEventListener("click",()=>{const info={rgb:["RGB observation","Validated RGB imagery is the input expected by the reconstruction pipeline. Public web mode does not upload or infer arbitrary images."],spectral:["SpectralNetV10","The multiscale residual encoder-decoder reconstructs six bands. Implementation: FINAL_PROJECT_NASA/src/model_defs.py."],drought:["Physics-guided temporal model","Combines temporal features and spectral indices for drought-risk ranking. Implementation: FINAL_PROJECT_NASA/src/realworld_drought_production.py."],planner:["AURORA mission planner","Ranks candidates by information gain per energy under battery and storage constraints. Implementation: FINAL_PROJECT_NASA/src/integrated_mission.py."]}[button.dataset.arch];$("modal-title").textContent=info[0];$("modal-body").textContent=info[1];modal.classList.add("open")})); $("modal-close").addEventListener("click",()=>modal.classList.remove("open")); modal.addEventListener("click",event=>{if(event.target===modal)modal.classList.remove("open")});
+      load();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# The Netlify demo is static and has no Python dependencies.
+# Research/training dependencies are listed in requirements-research.txt.
