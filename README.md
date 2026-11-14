@@ -96,6 +96,8 @@ Publish directory: .
 The hosted site runs as a static demo. It includes the bundled regional
 forecast and verified sample reconstruction; the private PyTorch checkpoint is
 not shipped, so arbitrary-image inference requires the local backend.
+Open `https://your-site.netlify.app/graphs.html` to view the bundled results
+gallery.
 
 ## Quick start
 

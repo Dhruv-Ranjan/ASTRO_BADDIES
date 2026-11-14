@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASTRO BADDIES | Results gallery</title>
+  <style>
+    :root{color-scheme:dark;--bg:#111712;--panel:#19221b;--line:rgba(230,238,221,.14);--text:#eef0e6;--muted:#a2ad9e;--green:#b8ed75}
+    *{box-sizing:border-box}body{margin:0;color:var(--text);background:var(--bg);font:15px system-ui,sans-serif}
+    main{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:42px 0 70px}
+    a{color:var(--green)}h1{margin:0 0 8px;font-size:clamp(30px,5vw,54px)}p{color:var(--muted);line-height:1.6}
+    .links{display:flex;gap:16px;margin:22px 0 30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    figure{margin:0;padding:10px;background:var(--panel);border:1px solid var(--line);border-radius:5px}img{display:block;width:100%;height:auto}figcaption{padding:10px 2px 2px;color:var(--muted);font-size:12px}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Results gallery</h1>
+    <p>Recorded AURORA mission-planning and drought-model outputs. These are experiment figures, not live spacecraft telemetry.</p>
+    <div class="links"><a href="index.html">Rainfall observatory</a><a href="mission-control.html">Mission control</a></div>
+    <div class="grid">
+      <figure><img src="graphs/nominal_rmse.png" alt="Nominal RMSE graph"><figcaption>Nominal resource scenario: RMSE</figcaption></figure>
+      <figure><img src="graphs/nominal_information_gain.png" alt="Nominal information gain graph"><figcaption>Nominal resource scenario: information gain</figcaption></figure>
+      <figure><img src="graphs/nominal_observations.png" alt="Nominal observations graph"><figcaption>Nominal observation schedule</figcaption></figure>
+      <figure><img src="graphs/battery_stress_rmse.png" alt="Battery stress RMSE graph"><figcaption>Battery-stress scenario: RMSE</figcaption></figure>
+      <figure><img src="graphs/cloud_stress_rmse.png" alt="Cloud stress RMSE graph"><figcaption>Cloud-stress scenario: RMSE</figcaption></figure>
+      <figure><img src="graphs/storage_stress_rmse.png" alt="Storage stress RMSE graph"><figcaption>Storage-stress scenario: RMSE</figcaption></figure>
+      <figure><img src="screenshots/drought-heldout-forecast.png" alt="Held-out drought forecast"><figcaption>Held-out drought forecast</figcaption></figure>
+      <figure><img src="screenshots/drought-observed-vs-predicted.png" alt="Observed versus predicted drought"><figcaption>Observed versus predicted drought</figcaption></figure>
+      <figure><img src="screenshots/research-results.png" alt="Research results dashboard"><figcaption>Research results dashboard</figcaption></figure>
+    </div>
+  </main>
+</body>
+</html>

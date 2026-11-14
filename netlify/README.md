@@ -16,6 +16,20 @@ The site includes the bundled drought snapshot and a verified precomputed
 spectral reconstruction demonstration. The private PyTorch checkpoint is not
 included, so arbitrary image upload inference remains a local-only feature.
 
+## Included figures
+
+The upload also includes real project outputs under `graphs/` and
+`screenshots/`:
+
+- nominal, battery-stress, cloud-stress, and storage-stress RMSE plots;
+- mission observation and information-gain plots;
+- drought held-out forecast and observed-versus-predicted figures;
+- a research-results dashboard capture.
+
+These are recorded experiment outputs, not live spacecraft telemetry.
+
+After deployment, open `graphs.html` for the browsable results gallery.
+
 ## Local preview
 
 ```powershell
