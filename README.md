@@ -3,7 +3,7 @@
 Integrated satellite intelligence for drought monitoring, spectral reconstruction,
 and resource-aware mission planning.
 
-**Live application:** https://aurora-sr.netlify.app/  
+**Live application:** https://astrobaddies.netlify.app/  
 **Repository prepared for upload:** `ASTRO_BADDIES/`
 
 ## What it does
