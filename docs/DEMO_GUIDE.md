@@ -2,17 +2,22 @@
 
 ## Hosted demo
 
-Open the Spectral Lab at https://aurora-sr.netlify.app/. Select B02, B03, B04,
-B08, B11, or B12 to inspect the recorded reconstruction preview and its
-reflectance summary. The hosted page serves a precomputed local model result;
-it does not run new inference in the browser.
+Open the Trend Lab at https://aurora-sr.netlify.app/. Select a NASA POWER
+climate variable, two study grid points, and the analysis years to compare
+annual records, estimated rates of change, confidence intervals, and trend
+significance. The browser analyzes an annual dataset bundled in the site; it
+does not request NASA POWER live. Open Spectral Lab to inspect the recorded
+six-band reconstruction. It serves a precomputed model result and does not
+run new inference in the browser.
 
-Use **Mission dashboard** to explore the bundled regional drought snapshot,
+Use **Research console** to explore the bundled regional drought snapshot,
 resource-planning replay, scenario controls, and research notes. The snapshot
 and simulated mission choices are not live satellite telemetry.
 
-The hosted pages do not call NASA POWER or download Sentinel-2 scenes. NASA
-POWER is used by a separate research pipeline in
+The hosted pages do not make live NASA POWER requests or download Sentinel-2
+scenes. The Trend Lab's checked-in annual sample is derived from NASA POWER's
+public monthly Agroclimatology point API. NASA POWER is also used by a separate
+daily drought research pipeline in
 `AURORA/AURORA_REALWORLD_FINAL.py`: it supplies daily precipitation and
 temperature context, which is combined with timestamped Sentinel-2
 scene-statistics to build drought predictors and a future rainfall-deficit
@@ -45,9 +50,11 @@ this service.
 
 ## Explain the limits
 
-The current release demonstrates spectral reconstruction and drought-focused
-research outputs. It does not yet provide a general variable catalogue,
-spatiotemporal trend fitting, or statistical significance testing. Drought
-labels are predominantly proxy-derived, confidence outputs are uncalibrated,
-and the mission planner uses simulated resource decisions. Do not describe
-these outputs as operational alerts or spacecraft telemetry.
+The Trend Lab offers six NASA POWER climate variables for four bundled grid
+points, not a general mission/model catalogue or full spatial analysis. Its
+linear trend test uses a large-sample normal approximation and Newey-West HAC
+standard errors; significance applies to each individual time series, not the
+difference between two regional slopes. It does not establish causes or
+impacts. Drought labels are predominantly proxy-derived, confidence outputs
+are uncalibrated, and mission planning uses simulated resource decisions. Do
+not describe these outputs as operational alerts or spacecraft telemetry.

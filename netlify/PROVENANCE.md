@@ -7,6 +7,9 @@ records when this release became available.
 
 ## Included
 
+- The compact NASA POWER monthly-derived annual series powering the public
+  Trend Lab, with attribution, aggregation details, coordinates, and caveats
+  embedded in its metadata.
 - The simulator and orbital/resource-model utilities used for the AURORA
   experiment.
 - The experiment configuration, executed aggregate outputs, decision records,

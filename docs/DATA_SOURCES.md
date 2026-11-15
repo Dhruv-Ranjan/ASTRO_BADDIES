@@ -35,6 +35,33 @@ hosted output is a bundled reconstruction. The public site does not query
 either service live. POWER's gridded weather context is not point
 weather-station measurements or field truth.
 
+## NASA POWER Trend Lab dataset
+
+The public site's Trend Lab uses a separate, compact record in
+[`netlify/data/power-annual-1981-2025.json`](../netlify/data/power-annual-1981-2025.json).
+It was assembled from NASA POWER's public [Monthly Point API](https://power.larc.nasa.gov/docs/services/api/temporal/monthly/)
+for the Agroclimatology (`AG`) community, covering 1981–2025 at four chosen
+Indian coordinates: Bengaluru (12.9716, 77.5946), Jaipur (26.9124, 75.7873),
+Kochi (9.9312, 76.2673), and Delhi (28.6139, 77.2090). The six parameters
+are mean, maximum, and minimum 2 m temperature (`T2M`, `T2M_MAX`, `T2M_MIN`),
+corrected precipitation (`PRECTOTCORR`), 2 m relative humidity (`RH2M`), and
+10 m wind speed (`WS10M`). Temperature, humidity, and wind are day-weighted
+annual means. Monthly mean daily precipitation is multiplied by calendar days
+and summed as annual precipitation in mm/year.
+
+The browser fits a linear trend independently for each selected grid point,
+reports its rate per decade, and calculates Newey–West HAC standard errors
+with a two-sided large-sample normal p-value and a 95% interval. This makes
+annual trends inspectable and comparable, but the significance label tests
+each individual record against a zero slope; it does not test whether two
+regional slopes differ from each other. It is an exploratory screen, not a
+Mann–Kendall test or an exhaustive analysis. Grid cells are not weather
+stations, citywide observations, or area averages; trends do not prove causes
+or impacts. Users should account for product continuity, residual
+autocorrelation, and multiple comparisons before scientific interpretation.
+The annual snapshot is precomputed from NASA POWER; the deployed website does
+not query POWER at runtime.
+
 ## Release contents and terms
 
 The public release contains source, compact metadata, selected model artifacts,

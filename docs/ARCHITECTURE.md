@@ -41,6 +41,11 @@ the hosted dashboard's bundled outputs.
 
 ## Deployment boundary
 
-Netlify serves the static frontend only. The Python API is local/demo
-infrastructure and is not deployed by `frontend/netlify.toml`.
+Netlify serves the static interface in `netlify/`. Its Trend Lab reads the
+checked-in annual NASA POWER snapshot at `netlify/data/`, then computes a
+bounded, per-grid-cell linear trend and HAC significance summary in the
+browser. It does not query POWER or train models at runtime. Spectral model
+inference and the full POWER/Sentinel-2 drought workflow remain in the local
+Python research environment; the website exposes selected model outputs and
+the focused trend analysis.
 

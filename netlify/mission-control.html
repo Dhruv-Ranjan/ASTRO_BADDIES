@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#111814">
-  <meta name="description" content="AURORA-SR Earth observation mission dashboard.">
-  <title>AURORA-SR | Mission Dashboard</title>
+  <meta name="description" content="AURORA-SR research console with recorded drought-model results, spectral reconstruction, and observation-planning experiments.">
+  <title>AURORA-SR | Research Console</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +29,12 @@
     :root{color-scheme:dark;--bg:#111814;--panel:#1a241e;--panel2:#212c24;--line:rgba(231,239,224,.13);--text:#edf0e6;--muted:#a4aea0;--cyan:#b8e879;--green:#8fd3b4;--amber:#e9c47c;--red:#ee9076;--mono:"DM Mono",ui-monospace,monospace;--sans:"DM Sans",Inter,ui-sans-serif,system-ui,sans-serif}
     body{background:radial-gradient(ellipse at 70% -15%,rgba(151,194,116,.14),transparent 45%),repeating-linear-gradient(0deg,transparent 0 71px,rgba(234,240,223,.018) 72px),var(--bg);line-height:1.55}
     .shell{width:min(1680px,calc(100% - 64px))}.topbar{min-height:76px;background:rgba(17,24,20,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.topbar>.shell{width:min(1680px,calc(100% - 64px))!important;max-width:1680px!important;margin:auto!important;padding:0!important}
-    .brand{align-items:center;font-size:13px;letter-spacing:.14em}.brand small{display:block;margin-top:4px;color:var(--muted);font:9px var(--mono);letter-spacing:.12em}.top-status{padding:7px 10px;border:1px solid var(--line);border-radius:99px;font-size:9px;letter-spacing:.12em}
+.brand{align-items:center;font-size:13px;letter-spacing:.14em}.brand small{display:block;margin-top:4px;color:var(--muted);font:9px var(--mono);letter-spacing:.12em}.top-status{padding:7px 10px;border:1px solid var(--line);border-radius:99px;font-size:9px;letter-spacing:.12em}.site-links{display:flex;flex-wrap:wrap;gap:clamp(8px,1.5vw,20px);align-items:center}.site-links a{color:var(--muted);text-decoration:none;font-size:11px;white-space:nowrap}.site-links a:hover,.site-links a[aria-current=page]{color:var(--cyan)}
     .layout{display:block;padding:22px 0 70px}.sidebar{position:static;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:5px 24px;margin-bottom:32px;padding:15px 17px;background:rgba(26,36,30,.82);border:1px solid var(--line);border-radius:8px}.sidebar h1{align-self:end;margin:0;font:500 21px/1.1 "Fraunces",Georgia,serif;letter-spacing:-.02em}.sidebar>p{grid-column:1;grid-row:2;margin:0;color:var(--muted);font-size:10px}.nav{grid-column:2;grid-row:1 / span 2;display:flex;justify-content:flex-end;flex-wrap:wrap;gap:5px}.nav button{padding:9px 11px;color:var(--muted);background:transparent;border:1px solid transparent;border-radius:5px;border-left:1px solid transparent;font:10px var(--mono);white-space:nowrap}.nav button:hover,.nav button.active{color:var(--text);background:rgba(184,232,121,.09);border-color:rgba(184,232,121,.2)}.nav button.active{color:var(--cyan)}.sidebar-note{grid-column:1 / -1;margin:13px 0 0;padding:9px 12px;background:rgba(233,196,124,.055);border:1px solid rgba(233,196,124,.16);border-radius:5px;font-size:10px}.sidebar-note strong{display:inline;margin-right:8px;color:var(--amber);font:9px var(--mono);letter-spacing:.1em}
     .hero{align-items:end;margin:0 auto 31px;padding:0 8px;max-width:1120px}.eyebrow,.kicker{color:var(--green);font-size:9px;letter-spacing:.16em}.hero h2{font:500 clamp(38px,5vw,60px)/1.02 "Fraunces",Georgia,serif;letter-spacing:-.04em}.hero h2 span{color:var(--cyan)}.hero-note{max-width:300px;margin:0;color:var(--muted);font-size:12px;line-height:1.7}
     .view{max-width:1120px;margin:0 auto}.panel,.metric,.region-card{background:linear-gradient(145deg,rgba(31,43,35,.98),rgba(24,34,28,.98));border:1px solid var(--line);border-radius:7px}.panel{padding:21px}.metric{padding:18px}.metric-value{color:var(--cyan)}.section-head{margin:29px 0 13px}.section-head h3{font:500 20px "Fraunces",Georgia,serif}.tag{border-radius:99px;padding:5px 9px;font-size:8px;letter-spacing:.07em}.button{border-radius:5px;background:var(--cyan);color:#172016;padding:11px 15px}.button.secondary{color:var(--text);background:#29362d;border:1px solid var(--line)}.notice{border-radius:5px;color:#cde2c7;background:rgba(143,211,180,.07);border-color:rgba(143,211,180,.23)}.warning{color:#f1d9a5;background:rgba(233,196,124,.06);border-color:rgba(233,196,124,.2)}
     .control input,.control select,#drought-region,#region-filter{background:#141d17!important;border:1px solid var(--line)!important;border-radius:5px!important;color:var(--text)!important}.band{border-radius:5px}.footer{max-width:1120px;margin:45px auto 0;padding-top:18px;font-size:10px}.modal-card{background:var(--panel);border-color:var(--line);border-radius:8px}
-    @media(max-width:900px){.layout{padding-top:17px}.sidebar{grid-template-columns:1fr}.sidebar>p{grid-column:1;grid-row:auto}.nav{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:8px}.sidebar-note{grid-column:1}.hero{display:block}.hero-note{margin-top:12px;max-width:560px}}
+@media(max-width:900px){.topbar>.shell{align-items:flex-start!important;flex-direction:column;padding:13px 0!important;gap:11px!important}.site-links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:3px}.layout{padding-top:17px}.sidebar{grid-template-columns:1fr}.sidebar>p{grid-column:1;grid-row:auto}.nav{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:8px}.sidebar-note{grid-column:1}.hero{display:block}.hero-note{margin-top:12px;max-width:560px}}
     @media(max-width:680px){.shell{width:calc(100% - 28px)}.topbar>.shell{width:calc(100% - 28px)!important}.brand{max-width:100%;letter-spacing:.11em}.brand small{white-space:normal;line-height:1.5}.sidebar{padding:14px}.nav{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:3px}.nav button{font-size:9px}.hero{padding:0 2px}.hero h2{font-size:clamp(36px,11vw,48px)}.panel{padding:15px}.section-head{align-items:flex-start}.footer{margin-top:35px}}
     @media(min-width:1700px){.view,.hero,.footer{max-width:1480px}.hero{margin-left:auto;margin-right:auto}.view{margin-left:auto;margin-right:auto}.footer{margin-left:auto;margin-right:auto}.panel{padding:25px}.grid{gap:20px}#map{height:500px}.hero h2{font-size:clamp(58px,4.2vw,76px)}}
   </style>
@@ -43,13 +43,13 @@
   <header class="topbar">
     <div class="shell" style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px">
       <a class="brand" href="index.html"><span>AURORA-SR <small>EARTH OBSERVATION · TEAM ASTRO BADDIES</small></span></a>
-      <div class="top-status">RESEARCH BUILD · DATA SNAPSHOT</div>
+      <nav class="site-links" aria-label="Main navigation"><a href="index.html">Trend Lab</a><a href="spectral-lab.html">Spectral Lab</a><a href="graphs.html">Research figures</a><a href="mission-control.html" aria-current="page">Research console</a></nav>
     </div>
   </header>
   <div class="shell layout">
     <aside class="sidebar">
-      <h1>Mission dashboard</h1>
-      <p>Inspect the drought-monitoring pipeline and run auditable observation-planning simulations.</p>
+      <h1>Research console</h1>
+      <p>Explore recorded model outputs, drought experiments, and auditable observation-planning simulations. For NASA POWER trend analysis, start at Trend Lab.</p>
       <nav class="nav" aria-label="Platform sections">
         <button class="active" data-view="spectral">01 · Spectral lab</button>
         <button data-view="overview">02 · Overview</button>
@@ -65,7 +65,7 @@
     <main>
       <div class="hero">
         <div><div class="eyebrow">AURORA-SR / EARTH CHANGE EXPLORER</div><h2>Read the changing <span>Earth.</span></h2></div>
-        <p class="hero-note">Explore the recorded six-band reconstruction, then move into the regional drought snapshot and resource-planning research demo.</p>
+        <p class="hero-note">AURORA-SR is the Earth observation research and model-training project; this website makes selected results accessible. <a href="index.html" style="color:var(--cyan)">Open the NASA POWER Trend Lab →</a></p>
       </div>
 
       <section id="overview" class="view">
@@ -110,7 +110,7 @@
       <section id="architecture" class="view">
         <div class="section-head"><h3>Technical architecture</h3><span class="tag">click a component</span></div><div class="panel"><div class="architecture"><button class="arch-node" data-arch="rgb"><strong>RGB observation</strong><span>validated image input</span></button><span class="arrow">→</span><button class="arch-node" data-arch="spectral"><strong>SpectralNetV10</strong><span>six-band reconstruction</span></button><span class="arrow">→</span><button class="arch-node" data-arch="drought"><strong>Temporal model</strong><span>drought-risk estimate</span></button><span class="arrow">→</span><button class="arch-node" data-arch="planner"><strong>AURORA planner</strong><span>resource-aware target</span></button></div><div class="notice" style="margin-top:18px">Click a node to inspect its role and repository implementation.</div></div>
       </section>
-      <footer class="footer">AURORA-SR is an Earth observation research prototype by Team ASTRO BADDIES. Distinguish observed data, model-derived outputs, and mission simulations. <a href="index.html" style="color:var(--cyan)">Open Spectral Lab</a> · <a href="https://github.com/Dhruv-Ranjan/ASTRO_BADDIES" style="color:var(--cyan)">Source repository</a></footer>
+      <footer class="footer">AURORA-SR is an Earth observation research prototype by Team ASTRO BADDIES. Distinguish observed data, model-derived outputs, and mission simulations. <a href="index.html" style="color:var(--cyan)">Open Trend Lab</a> · <a href="https://github.com/Dhruv-Ranjan/ASTRO_BADDIES" style="color:var(--cyan)">Source repository</a></footer>
     </main>
   </div>
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button id="modal-close" class="modal-close" aria-label="Close">×</button><h3 id="modal-title"></h3><p id="modal-body"></p></div></div>
