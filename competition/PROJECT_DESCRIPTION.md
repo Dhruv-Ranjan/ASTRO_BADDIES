@@ -1,6 +1,6 @@
 # AURORA-SR: Earth-observation research
 
-**NASA Space Apps 2026 challenge fit:** Be An Earth System Trend Detective!  
+**NASA Space Apps 2026 challenge fit:** Be An Earth System Trend Detective!
 **Team:** ASTRO BADDIES
 
 ## What it does and how it works

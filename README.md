@@ -205,4 +205,3 @@ See [docs/DEMO_GUIDE.md](docs/DEMO_GUIDE.md) for the sample flow and caveats.
 Source code is MIT licensed; see [LICENSE](LICENSE). Data and external services
 retain their own terms. Dataset provenance and acknowledgements are documented
 in [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
-
