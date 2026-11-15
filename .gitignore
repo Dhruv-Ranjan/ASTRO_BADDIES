@@ -28,3 +28,7 @@ remote_cache/
 data/cache/
 checkpoints/
 
+# Local browser profiles and print checks used while preparing the demo.
+/submission/chrome-profile-*/
+/submission/test-print.pdf
+
