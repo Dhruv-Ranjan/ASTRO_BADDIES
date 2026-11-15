@@ -11,7 +11,7 @@ exposes selected results and a focused climate-trend demonstration.
 Upload this folder as the site directory, or connect the repository and set:
 
 ```text
-Base directory: ASTRO_BADDIES/netlify
+Base directory: netlify
 Build command: leave blank
 Publish directory: .
 ```
