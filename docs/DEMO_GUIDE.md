@@ -1,24 +1,44 @@
 # Demo guide
 
-## Live demo
+## Hosted demo
 
-Open https://aurora-sr.netlify.app/ and walk through Overview, Spectral Lab,
-Drought Lab, Mission Control, Scenarios, and Research.
+Open the Spectral Lab at https://aurora-sr.netlify.app/. Select B02, B03, B04,
+B08, B11, or B12 to inspect the recorded reconstruction preview and its
+reflectance summary. The hosted page serves a precomputed local model result;
+it does not run new inference in the browser.
 
-## Local demo
+Use **Mission dashboard** to explore the bundled regional drought snapshot,
+resource-planning replay, scenario controls, and research notes. The snapshot
+and simulated mission choices are not live satellite telemetry.
+
+## Local static preview
+
+From the `ASTRO_BADDIES` repository root:
 
 ```powershell
-.\.venv\Scripts\python.exe .\backend\mission_api.py
+python -m http.server 8080 --directory .\netlify
 ```
 
-Open `http://127.0.0.1:8000/mission-control.html`, choose **Use repository
-sample**, and select **Run SpectralNetV10**. Explain that the six previews are
-model outputs from an RGB sample, not newly acquired imagery. Then show the
-mission-control and scenario views and point out the integrity note.
+Open `http://127.0.0.1:8080/` for the Spectral Lab or
+`http://127.0.0.1:8080/mission-control.html` for the dashboard.
 
-## Recording
+## Local model inference
 
-Use the live or local dashboard, record one complete pass from RGB input to
-six-band output and mission selection, and state the limitations aloud. Do not
-describe simulated resource decisions as spacecraft telemetry.
+The separate Python API supports arbitrary PNG/JPEG input when its model
+checkpoint and dependencies are available:
 
+```powershell
+python .\backend\mission_api.py
+```
+
+Use the local API only for development. The hosted static site does not expose
+this service.
+
+## Explain the limits
+
+The current release demonstrates spectral reconstruction and drought-focused
+research outputs. It does not yet provide a general variable catalogue,
+spatiotemporal trend fitting, or statistical significance testing. Drought
+labels are predominantly proxy-derived, confidence outputs are uncalibrated,
+and the mission planner uses simulated resource decisions. Do not describe
+these outputs as operational alerts or spacecraft telemetry.

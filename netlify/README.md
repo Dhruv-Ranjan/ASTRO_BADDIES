@@ -1,39 +1,42 @@
-# ASTRO BADDIES static site
+﻿# ASTRO BADDIES Netlify site
 
-This folder is the deployable Netlify site.
+This folder is the static deployment for the ASTRO BADDIES Earth Change
+Explorer. The home page opens on the Spectral Lab, where visitors can inspect
+the checked-in six-band reconstruction sample and its recorded reflectance
+summaries.
 
-## Netlify
+## Deploy
 
 Upload this folder as the site directory, or connect the repository and set:
 
 ```text
-Base directory: netlify
+Base directory: ASTRO_BADDIES/netlify
 Build command: leave blank
 Publish directory: .
 ```
 
-The site includes the bundled drought snapshot and a verified precomputed
-spectral reconstruction demonstration. The private PyTorch checkpoint is not
-included, so arbitrary image upload inference remains a local-only feature.
+## Pages
 
-## Included figures
+- `index.html` — Spectral Lab home page.
+- `mission-control.html` — bundled drought regions, mission planner replay,
+  spectral demo, scenarios, and research notes.
+- `graphs.html` — browsable experiment figures.
 
-The upload also includes real project outputs under `graphs/` and
-`screenshots/`:
+The static demo displays a precomputed reconstruction. It does not include
+private PyTorch checkpoints or a hosted inference API. Arbitrary-image
+inference is available through the local API described in
+`../docs/DEMO_GUIDE.md`.
 
-- nominal, battery-stress, cloud-stress, and storage-stress RMSE plots;
-- mission observation and information-gain plots;
-- drought held-out forecast and observed-versus-predicted figures;
-- a research-results dashboard capture.
-
-These are recorded experiment outputs, not live spacecraft telemetry.
-
-After deployment, open `graphs.html` for the browsable results gallery.
+Experiment figures under `graphs/` are recorded research outputs, not live
+spacecraft telemetry or current Earth monitoring data.
 
 ## Local preview
+
+From this directory:
 
 ```powershell
 python -m http.server 8080
 ```
 
-Open `http://127.0.0.1:8080/mission-control.html`.
+Open `http://127.0.0.1:8080/` for the Spectral Lab, or
+`http://127.0.0.1:8080/mission-control.html` for the dashboard.

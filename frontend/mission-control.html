@@ -1,12 +1,15 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07121f">
-  <meta name="description" content="AURORA-JALADRISHTI interactive drought-monitoring and mission-planning platform.">
-  <title>AURORA-JALADRISHTI | Mission Control</title>
+  <meta name="theme-color" content="#111814">
+  <meta name="description" content="AURORA-SR Earth observation mission dashboard.">
+  <title>AURORA-SR | Mission Dashboard</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
   <style>
     :root{color-scheme:dark;--bg:#07121f;--panel:#0d1d2d;--panel2:#11273a;--line:#244258;--text:#e6f0f5;--muted:#91a9b8;--cyan:#54d9ec;--green:#99e38f;--amber:#f7c873;--red:#ff8d7a;--mono:"IBM Plex Mono","Cascadia Mono",monospace;--sans:Inter,ui-sans-serif,system-ui,sans-serif}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5}.shell{width:min(1440px,calc(100% - 40px));margin:auto}
@@ -22,23 +25,35 @@
     .band,.band:nth-child(n){position:relative;height:132px;padding:0;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;overflow:hidden;background:#10283a;color:#f3fbff;border-color:#376176}.band img{flex:1;min-height:0;margin:0!important}.band figcaption{padding:7px 8px;background:rgba(4,14,24,.96);color:#f3fbff;font:700 10px/1.35 var(--mono);letter-spacing:.01em}.band figcaption small{color:#bfe7ef;font:400 10px/1.35 var(--mono)}
     @media(max-width:1050px){.layout{grid-template-columns:1fr}.sidebar{position:static}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap}.sidebar-note{display:none}.grid-4{grid-template-columns:repeat(2,1fr)}.architecture{grid-template-columns:repeat(3,1fr)}.arrow{display:none}}
     @media(max-width:680px){.shell{width:min(100% - 24px,1440px)}.top-status{display:none}.hero{display:block}.hero-note{margin-top:15px}.grid-4,.grid-3,.grid-2,.controls{grid-template-columns:1fr}.band-grid{grid-template-columns:repeat(3,1fr)}.architecture{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(4,1fr)}#map{height:300px}}
+    /* AURORA-SR dashboard refresh */
+    :root{color-scheme:dark;--bg:#111814;--panel:#1a241e;--panel2:#212c24;--line:rgba(231,239,224,.13);--text:#edf0e6;--muted:#a4aea0;--cyan:#b8e879;--green:#8fd3b4;--amber:#e9c47c;--red:#ee9076;--mono:"DM Mono",ui-monospace,monospace;--sans:"DM Sans",Inter,ui-sans-serif,system-ui,sans-serif}
+    body{background:radial-gradient(ellipse at 70% -15%,rgba(151,194,116,.14),transparent 45%),repeating-linear-gradient(0deg,transparent 0 71px,rgba(234,240,223,.018) 72px),var(--bg);line-height:1.55}
+    .shell{width:min(1680px,calc(100% - 64px))}.topbar{min-height:76px;background:rgba(17,24,20,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.topbar>.shell{width:min(1680px,calc(100% - 64px))!important;max-width:1680px!important;margin:auto!important;padding:0!important}
+    .brand{align-items:center;font-size:13px;letter-spacing:.14em}.brand small{display:block;margin-top:4px;color:var(--muted);font:9px var(--mono);letter-spacing:.12em}.top-status{padding:7px 10px;border:1px solid var(--line);border-radius:99px;font-size:9px;letter-spacing:.12em}
+    .layout{display:block;padding:22px 0 70px}.sidebar{position:static;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:5px 24px;margin-bottom:32px;padding:15px 17px;background:rgba(26,36,30,.82);border:1px solid var(--line);border-radius:8px}.sidebar h1{align-self:end;margin:0;font:500 21px/1.1 "Fraunces",Georgia,serif;letter-spacing:-.02em}.sidebar>p{grid-column:1;grid-row:2;margin:0;color:var(--muted);font-size:10px}.nav{grid-column:2;grid-row:1 / span 2;display:flex;justify-content:flex-end;flex-wrap:wrap;gap:5px}.nav button{padding:9px 11px;color:var(--muted);background:transparent;border:1px solid transparent;border-radius:5px;border-left:1px solid transparent;font:10px var(--mono);white-space:nowrap}.nav button:hover,.nav button.active{color:var(--text);background:rgba(184,232,121,.09);border-color:rgba(184,232,121,.2)}.nav button.active{color:var(--cyan)}.sidebar-note{grid-column:1 / -1;margin:13px 0 0;padding:9px 12px;background:rgba(233,196,124,.055);border:1px solid rgba(233,196,124,.16);border-radius:5px;font-size:10px}.sidebar-note strong{display:inline;margin-right:8px;color:var(--amber);font:9px var(--mono);letter-spacing:.1em}
+    .hero{align-items:end;margin:0 auto 31px;padding:0 8px;max-width:1120px}.eyebrow,.kicker{color:var(--green);font-size:9px;letter-spacing:.16em}.hero h2{font:500 clamp(38px,5vw,60px)/1.02 "Fraunces",Georgia,serif;letter-spacing:-.04em}.hero h2 span{color:var(--cyan)}.hero-note{max-width:300px;margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+    .view{max-width:1120px;margin:0 auto}.panel,.metric,.region-card{background:linear-gradient(145deg,rgba(31,43,35,.98),rgba(24,34,28,.98));border:1px solid var(--line);border-radius:7px}.panel{padding:21px}.metric{padding:18px}.metric-value{color:var(--cyan)}.section-head{margin:29px 0 13px}.section-head h3{font:500 20px "Fraunces",Georgia,serif}.tag{border-radius:99px;padding:5px 9px;font-size:8px;letter-spacing:.07em}.button{border-radius:5px;background:var(--cyan);color:#172016;padding:11px 15px}.button.secondary{color:var(--text);background:#29362d;border:1px solid var(--line)}.notice{border-radius:5px;color:#cde2c7;background:rgba(143,211,180,.07);border-color:rgba(143,211,180,.23)}.warning{color:#f1d9a5;background:rgba(233,196,124,.06);border-color:rgba(233,196,124,.2)}
+    .control input,.control select,#drought-region,#region-filter{background:#141d17!important;border:1px solid var(--line)!important;border-radius:5px!important;color:var(--text)!important}.band{border-radius:5px}.footer{max-width:1120px;margin:45px auto 0;padding-top:18px;font-size:10px}.modal-card{background:var(--panel);border-color:var(--line);border-radius:8px}
+    @media(max-width:900px){.layout{padding-top:17px}.sidebar{grid-template-columns:1fr}.sidebar>p{grid-column:1;grid-row:auto}.nav{grid-column:1;grid-row:auto;justify-content:flex-start;margin-top:8px}.sidebar-note{grid-column:1}.hero{display:block}.hero-note{margin-top:12px;max-width:560px}}
+    @media(max-width:680px){.shell{width:calc(100% - 28px)}.topbar>.shell{width:calc(100% - 28px)!important}.brand{max-width:100%;letter-spacing:.11em}.brand small{white-space:normal;line-height:1.5}.sidebar{padding:14px}.nav{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;padding-bottom:3px}.nav button{font-size:9px}.hero{padding:0 2px}.hero h2{font-size:clamp(36px,11vw,48px)}.panel{padding:15px}.section-head{align-items:flex-start}.footer{margin-top:35px}}
+    @media(min-width:1700px){.view,.hero,.footer{max-width:1480px}.hero{margin-left:auto;margin-right:auto}.view{margin-left:auto;margin-right:auto}.footer{margin-left:auto;margin-right:auto}.panel{padding:25px}.grid{gap:20px}#map{height:500px}.hero h2{font-size:clamp(58px,4.2vw,76px)}}
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="shell" style="display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px">
-      <a class="brand" href="index.html"><span>AURORA <small>JALADRISHTI</small></span></a>
-      <div class="top-status">LOCAL RESEARCH BUILD · DATA SNAPSHOT</div>
+      <a class="brand" href="index.html"><span>AURORA-SR <small>EARTH OBSERVATION · TEAM ASTRO BADDIES</small></span></a>
+      <div class="top-status">RESEARCH BUILD · DATA SNAPSHOT</div>
     </div>
   </header>
   <div class="shell layout">
     <aside class="sidebar">
-      <h1>Mission Control</h1>
+      <h1>Mission dashboard</h1>
       <p>Inspect the drought-monitoring pipeline and run auditable observation-planning simulations.</p>
       <nav class="nav" aria-label="Platform sections">
-        <button class="active" data-view="overview">01 · Overview</button>
-        <button data-view="monitoring">02 · Earth observation</button>
-        <button data-view="spectral">03 · Spectral lab</button>
+        <button class="active" data-view="spectral">01 · Spectral lab</button>
+        <button data-view="overview">02 · Overview</button>
+        <button data-view="monitoring">03 · Earth observation</button>
         <button data-view="drought">04 · Drought lab</button>
         <button data-view="mission">05 · Mission control</button>
         <button data-view="scenarios">06 · Scenarios</button>
@@ -49,11 +64,11 @@
     </aside>
     <main>
       <div class="hero">
-        <div><div class="eyebrow">AURORA-JALADRISHTI / PROJECT VIEW</div><h2>A practical look at the <span>mission pipeline.</span></h2></div>
-        <p class="hero-note">This is a working research demo: inspect the data, check the model outputs, and see how the planner responds to tighter resources.</p>
+        <div><div class="eyebrow">AURORA-SR / EARTH CHANGE EXPLORER</div><h2>Read the changing <span>Earth.</span></h2></div>
+        <p class="hero-note">Explore the recorded six-band reconstruction, then move into the regional drought snapshot and resource-planning research demo.</p>
       </div>
 
-      <section id="overview" class="view active">
+      <section id="overview" class="view">
         <div class="grid grid-4" id="overview-metrics"></div>
         <div class="section-head"><h3>Mission overview</h3><span class="tag">data snapshot</span></div>
         <div class="grid grid-2"><div class="panel"><h3>What is available here</h3><p style="margin-bottom:15px">The page reads the bundled forecast snapshot and lets you replay the planner without downloading the large checkpoints.</p><div class="notice">Available: regional drought outputs, coordinates, planner inputs, verified production metrics, and resource scenarios.</div><div class="notice warning" style="margin-top:10px">Not included here: direct RGB upload inference, raw spectral tensors, model checkpoints, or live spacecraft telemetry.</div></div><div class="panel"><h3>Selected observation</h3><div id="overview-selection" class="decision" style="margin-top:14px;padding:13px">Run Mission Control to select a target.</div></div></div>
@@ -66,7 +81,7 @@
         <div class="section-head"><h3>Regional model outputs</h3><input id="region-filter" placeholder="Filter regions…" style="padding:9px;color:var(--text);background:#0a1a29;border:1px solid var(--line);border-radius:4px"></div><div id="monitoring-regions" class="cards"></div>
       </section>
 
-      <section id="spectral" class="view">
+      <section id="spectral" class="view active">
         <div class="section-head"><h3>Spectral reconstruction</h3><span class="tag">local run completed</span></div>
         <div class="grid grid-2"><div class="panel"><h3>What is available</h3><p>The public release records the verified `SpectralNetV10` result, but the large tensor dataset and checkpoint are intentionally excluded from GitHub. This page reports the latest local evaluation rather than fabricating an image prediction.</p><div class="grid grid-2" style="margin-top:16px"><div class="metric"><div class="metric-label">End-to-end RMSE</div><div class="metric-value">0.02517</div><div class="metric-note">latest local run</div></div><div class="metric"><div class="metric-label">Output channels</div><div class="metric-value">6</div><div class="metric-note">reconstructed bands</div></div></div></div><div class="panel"><h3>Six-band output layout</h3><p>Band labels only; no pixels are generated by this browser page.</p><div class="band-grid"><div class="band">B02 · blue</div><div class="band">B03 · green</div><div class="band">B04 · red</div><div class="band">B08 · NIR</div><div class="band">B11 · SWIR</div><div class="band">B12 · SWIR</div></div></div></div>
         <div class="section-head"><h3>Try a reconstruction</h3><span class="tag">local checkpoint</span></div><div class="panel"><form id="reconstruct-form"><input id="image-upload" type="file" accept="image/png,image/jpeg"><button id="sample-image" class="button secondary" type="button" style="margin-left:8px">Use repository sample</button><button class="button" type="submit" style="margin-left:8px">Run SpectralNetV10</button></form><p id="reconstruct-status" class="small" style="margin-top:12px">Use the included 64×64 RGB test sample or upload a PNG/JPEG. The local service runs the restored checkpoint and returns six actual output bands.</p><div id="reconstruct-result" class="band-grid" hidden></div></div>
@@ -95,7 +110,7 @@
       <section id="architecture" class="view">
         <div class="section-head"><h3>Technical architecture</h3><span class="tag">click a component</span></div><div class="panel"><div class="architecture"><button class="arch-node" data-arch="rgb"><strong>RGB observation</strong><span>validated image input</span></button><span class="arrow">→</span><button class="arch-node" data-arch="spectral"><strong>SpectralNetV10</strong><span>six-band reconstruction</span></button><span class="arrow">→</span><button class="arch-node" data-arch="drought"><strong>Temporal model</strong><span>drought-risk estimate</span></button><span class="arrow">→</span><button class="arch-node" data-arch="planner"><strong>AURORA planner</strong><span>resource-aware target</span></button></div><div class="notice" style="margin-top:18px">Click a node to inspect its role and repository implementation.</div></div>
       </section>
-      <footer class="footer">AURORA-JALADRISHTI is a research prototype. Distinguish observed data, model-derived outputs, and mission simulation. <a href="index.html" style="color:var(--cyan)">Open rainfall observatory</a> · <a href="https://github.com/Dhruv-Ranjan/AURORA_JALADRISHTI" style="color:var(--cyan)">Source repository</a></footer>
+      <footer class="footer">AURORA-SR is an Earth observation research prototype by Team ASTRO BADDIES. Distinguish observed data, model-derived outputs, and mission simulations. <a href="index.html" style="color:var(--cyan)">Open Spectral Lab</a> · <a href="https://github.com/Dhruv-Ranjan/ASTRO_BADDIES" style="color:var(--cyan)">Source repository</a></footer>
     </main>
   </div>
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button id="modal-close" class="modal-close" aria-label="Close">×</button><h3 id="modal-title"></h3><p id="modal-body"></p></div></div>
@@ -165,6 +180,19 @@
       document.querySelectorAll("[data-jump]").forEach(button=>button.addEventListener("click",()=>document.querySelector(`[data-view="${button.dataset.jump}"]`).click()));
       ["battery","storage","capacity"].forEach(id=>$(id).addEventListener("input",()=>$(id+"-value").textContent=$(id).value));
       $("run-plan").addEventListener("click",runPlanner); $("drought-region").addEventListener("change",event=>renderDrought(regions.find(row=>row.region===event.target.value)));
+      async function loadStaticReconstruction() {
+        const response = await fetch("demo_assets/reconstruction_sample.json", {cache:"no-store"});
+        if (!response.ok) throw new Error(`Bundled reconstruction sample returned ${response.status}.`);
+        return response.json();
+      }
+      function showReconstruction(payload, staticMode) {
+        const result = $("reconstruct-result");
+        result.innerHTML = payload.bands.map(band => `<figure class="band"><img src="${band.preview}" alt="${band.name} reconstructed preview" style="width:100%;height:72px;object-fit:cover;display:block;margin-bottom:5px"><figcaption>${band.name}<br><small>mean ${band.mean}</small></figcaption></figure>`).join("");
+        result.hidden = false;
+        return staticMode
+          ? "Showing the checked-in verified sample reconstruction. Upload inference is available when mission_api.py is running locally."
+          : `Processed ${payload.original_size[0]}×${payload.original_size[1]} as ${payload.processed_size[0]}×${payload.processed_size[1]}. ${payload.note}`;
+      }
       $("reconstruct-form").addEventListener("submit", async event => {
         event.preventDefault();
         const file = $("image-upload").files[0];
@@ -181,11 +209,17 @@
           const response = await fetch("http://127.0.0.1:8000/api/reconstruct", {method:"POST", body:form});
           const payload = await response.json();
           if (!response.ok || payload.error) throw new Error(payload.error || `Inference service returned ${response.status}.`);
-          result.innerHTML = payload.bands.map(band => `<figure class="band"><img src="${band.preview}" alt="${band.name} reconstructed preview" style="width:100%;height:72px;object-fit:cover;display:block;margin-bottom:5px"><figcaption>${band.name}<br><small>mean ${band.mean}</small></figcaption></figure>`).join("");
-          result.hidden = false;
-          status.textContent = `Processed ${payload.original_size[0]}×${payload.original_size[1]} as ${payload.processed_size[0]}×${payload.processed_size[1]}. ${payload.note}`;
+          status.textContent = showReconstruction(payload, false);
         } catch (error) {
-          status.textContent = `${error.message} Start mission_api.py locally first.`;
+          if (file.name === "test_rgb_sample.png") {
+            try {
+              status.textContent = showReconstruction(await loadStaticReconstruction(), true);
+            } catch (staticError) {
+              status.textContent = `The bundled demonstration could not be loaded: ${staticError.message}`;
+            }
+          } else {
+            status.textContent = "Live upload inference is local-only. Start mission_api.py for arbitrary PNG/JPEG files; use the repository sample for the hosted demo.";
+          }
         } finally {
           button.disabled = false;
         }
