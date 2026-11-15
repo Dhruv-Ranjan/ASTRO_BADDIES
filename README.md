@@ -11,7 +11,7 @@ research outputs and this focused trend demonstration; it is not the research
 or model-training pipeline itself.
 
 **Live application:** https://aurora-sr.netlify.app/
-**NASA Space Apps demo:** [Download the five-slide PDF](AURORA-SR_Demo.pdf)
+**NASA Space Apps demo:** [Download the seven-slide, 16:10 PDF](AURORA-SR_Demo.pdf)
 **Project summary:** [`competition/PROJECT_SUMMARY.md`](competition/PROJECT_SUMMARY.md)
 **Project description:** [`competition/PROJECT_DESCRIPTION.md`](competition/PROJECT_DESCRIPTION.md)
 **Deployable site:** [`netlify/`](netlify/)

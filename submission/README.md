@@ -1,13 +1,9 @@
 # AURORA-SR Demo
 
-Five-slide NASA Space Apps Challenge demonstration.
+Seven-slide NASA Space Apps Challenge demonstration in a 16:10 laptop format.
 
 - [Open or download the PDF](../AURORA-SR_Demo.pdf)
 - Editable slide source: [`demo-slides.html`](demo-slides.html)
-- Current slide previews and source captures: [`screenshots/2026-trend-lab/`](screenshots/2026-trend-lab/)
+- 1440 ? 900 website captures and 1280 ? 800 slide previews: [`screenshots/2026-laptop/`](screenshots/2026-laptop/)
 
-The deck focuses on NASA POWER as the primary climate dataset, shows the
-Trend Lab and research-model work, and describes the website as an access layer
-for selected results. Screenshots were captured from the current local Netlify
-pages and are included with the source. The site and figures use bundled,
-precomputed data; they do not query NASA POWER live.
+The deck explains the NASA POWER drought-research workflow, the bounded Trend Lab, Sentinel-2 spectral and drought-model research, the role of the website, and scientific limits. The site screenshots were captured from local Netlify pages at a 16:10 viewport. The hosted site displays bundled and precomputed results; it does not query NASA POWER or Sentinel-2 live.
