@@ -11,14 +11,16 @@ research outputs and this focused trend demonstration; it is not the research
 or model-training pipeline itself.
 
 **Live application:** https://aurora-sr.netlify.app/
-**NASA Space Apps demo:** [Download the six-slide PDF](AURORA-SR_Demo.pdf)
+**NASA Space Apps demo:** [Download the five-slide PDF](AURORA-SR_Demo.pdf)
+**Project summary:** [`competition/PROJECT_SUMMARY.md`](competition/PROJECT_SUMMARY.md)
+**Project description:** [`competition/PROJECT_DESCRIPTION.md`](competition/PROJECT_DESCRIPTION.md)
 **Deployable site:** [`netlify/`](netlify/)
 **Repository folder:** `ASTRO_BADDIES/`
 
 ## Start with the Trend Lab
 
 The Netlify home page is the Trend Lab. Choose one of six NASA POWER variables,
-two of four Indian grid points, and a year range from 1981–2025. The browser
+two of four Indian grid points, and a year range from 1981-2025. The browser
 plots annual values, fits linear trends, reports rates per decade with HAC
 uncertainty and p-values, compares direction, and exports the selected annual
 records as CSV. The annual file is derived from NASA POWER's public monthly
@@ -149,15 +151,15 @@ Planner values are simulation results, not model accuracy metrics.
 
 ## Repository map
 
-- `frontend/` — source copy of the mission dashboard.
-- `netlify/` — static site and bundled demo assets.
-- `backend/` — local inference API.
-- `FINAL_PROJECT_NASA/` — model source, selected checkpoints, and artifacts.
-- `AURORA/` — mission-planning and scientific validation code/results.
-- `tests/` — focused pipeline and planner tests.
-- `docs/` — architecture, deployment, data, testing, and reproduction notes.
-- `competition/` — project description and submission materials.
-- `research/` — research paper and spectral reconstruction report.
+- `frontend/` â€” source copy of the mission dashboard.
+- `netlify/` â€” static site and bundled demo assets.
+- `backend/` â€” local inference API.
+- `FINAL_PROJECT_NASA/` â€” model source, selected checkpoints, and artifacts.
+- `AURORA/` â€” mission-planning and scientific validation code/results.
+- `tests/` â€” focused pipeline and planner tests.
+- `docs/` â€” architecture, deployment, data, testing, and reproduction notes.
+- `competition/` â€” project description and submission materials.
+- `research/` â€” research paper and spectral reconstruction report.
 
 ## Local use
 
@@ -203,3 +205,4 @@ See [docs/DEMO_GUIDE.md](docs/DEMO_GUIDE.md) for the sample flow and caveats.
 Source code is MIT licensed; see [LICENSE](LICENSE). Data and external services
 retain their own terms. Dataset provenance and acknowledgements are documented
 in [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md).
+

@@ -1,65 +1,32 @@
-﻿# ASTRO BADDIES — Earth Change Explorer
+# AURORA-SR: Earth-observation research
 
-Earth's environmental systems are always changing. A variable can rise in one
-region and fall in another, even when the same process connects both places.
-ASTRO BADDIES is a research prototype shaped around the challenge of finding
-those changes: choose a variable measured by an Earth science mission or
-produced by a model, view how it changes over time and space, estimate the
-size and direction of change, and judge whether the evidence supports a
-statistically significant trend.
+**NASA Space Apps 2026 challenge fit:** Be An Earth System Trend Detective!  
+**Team:** ASTRO BADDIES
 
-## Product direction
+## What it does and how it works
 
-The intended experience starts with a science variable rather than a fixed
-alert. A researcher should be able to identify a variable and its source,
-choose a time period and region, compare local directions of change, and
-inspect trend magnitude, uncertainty, and significance with enough context to
-interpret the result. The interface should distinguish observations,
-reconstructed values, model estimates, and simulations.
+AURORA-SR is primarily a research and model-development project. We develop and evaluate Earth-observation models for spectral reconstruction and drought analysis, with the aim of examining how climate conditions and land-surface signals can help explain environmental change. The website is an access layer for selected model outputs, figures, and a focused trend-analysis demonstration; it is not the research or model-training pipeline.
 
-## What this release demonstrates
+NASA POWER is the primary climate dataset in our drought research. The workflow requests daily Agroclimatology (AG) records for corrected precipitation (`PRECTOTCORR`) and 2-metre mean, maximum, and minimum air temperature (`T2M`, `T2M_MAX`, `T2M_MIN`). It derives 7-, 15-, 30-, 60-, and 90-day climate features and aligns them with Sentinel-2 scene observations. Rainfall over the following 30 days is reserved to construct an exploratory rainfall-deficit drought target. NASA POWER's gridded meteorological history, based on NASA GMAO MERRA-2 and GEOS-IT products, supplies the main weather context.
 
-The current release is a drought-focused research demonstrator and is not yet
-the general-purpose trend-analysis workflow described above. Its lead
-experience is the Spectral Lab, which displays six Sentinel-2-style band
-previews reconstructed from RGB imagery by `SpectralNetV10`. A bundled
-regional dashboard shows experimental drought outputs and lets visitors
-replay a resource-aware observation planner.
+Sentinel-2 adds localized land-surface information through vegetation and moisture statistics. In a separate model path, SpectralNetV10 is trained to reconstruct six Sentinel-2-style bands (B02, B03, B04, B08, B11, B12) from RGB imagery. These research models and their training/evaluation are distinct from the static website.
 
-The hosted Spectral Lab displays a recorded, verified result; it does not run
-inference in the browser. Arbitrary image inference requires the local Python
-API and checkpoint. The drought labels are predominantly proxy-derived, risk
-scores are not calibrated probabilities, forecast extrapolation is
-experimental, and planner constraints and belief updates are simulated.
+The Trend Lab demonstrates the challenge workflow with a bundled NASA POWER monthly-derived annual series (1981-2025) for four selected Indian grid points. It offers six climate variables, region comparison, selectable years, linear change rates per decade, Newey-West HAC uncertainty, p-values, 95% confidence intervals, and CSV export. Its statistical test assesses each point's trend against a zero slope; it does not test whether two regional slopes differ. The site does not query POWER or Sentinel-2 live and does not train models in the browser.
 
-## Pipeline in this prototype
+## Benefits and intended impact
 
-1. A local RGB image is passed to the spectral model.
-2. `SpectralNetV10` reconstructs B02, B03, B04, B08, B11, and B12.
-3. Temporal features and spectral indices feed the drought estimation code.
-4. The planner ranks candidate observations by information gain per resource
-   cost, subject to simulated battery and storage constraints.
+The project brings climate history, satellite surface signals, spectral reconstruction, and drought-model research into one accessible experience. The Trend Lab helps users inspect what is changing, where, by how much, and how strong the statistical evidence is. The intended impact is to make Earth-science model results easier to explore and to support further research into regional environmental change and drought, not to issue operational alerts.
 
-This pipeline is a foundation for broader Earth-variable exploration, not a
-claim that regional trend significance analysis is already implemented.
+## Tools and technologies
 
-## Earth data used
+Research and modeling use Python, pandas, NumPy, scikit-learn, and PyTorch. The website uses HTML, CSS, and JavaScript and is deployed as a static Netlify site. Climate access uses the NASA POWER Daily and Monthly Point APIs. Optional Sentinel-2 scene-statistics access uses Microsoft Planetary Computer. The site presents precomputed data and research outputs; it does not require specialized spacecraft hardware.
 
-NASA POWER is the primary climate dataset in the separate real-world drought
-research workflow. Daily corrected precipitation and mean/high/low
-temperature from the NASA POWER Agroclimatology API are transformed into
-rolling rainfall and heat features; following-30-day rainfall is used to
-construct the exploratory drought target. NASA's analysis-ready climate
-archive gives the workflow a consistent weather record, while its MERRA-2 and
-GEOS-IT meteorological inputs bring together Earth observations and
-assimilation modeling. Sentinel-2 contributes the complementary satellite
-surface signal through scene-level vegetation and moisture statistics and
-six-band spectral examples. POWER provides the main climate context; Sentinel-2
-adds localized surface detail. These sources support a research prototype,
-not operational drought claims, and neither is fetched live by the hosted
-static demo. See [Data and references](DATA_AND_REFERENCES.md).
+## Creative approach and factors considered
 
-The code holds out the future 30-day target from predictors, but its rolling
-POWER features include the matched calendar-day record. Since a daily total
-may include hours after a Sentinel-2 scene, strict intraday forecasting needs
-an additional one-day lag.
+The project combines a learned RGB-to-spectral model with physics-derived vegetation/moisture features, climate history from NASA POWER, and a regional trend interface. We considered the different spatial and temporal resolutions of POWER and Sentinel-2, missing or cloud-affected scenes, data-to-scene timing, autocorrelation, confidence and uncertainty, and proxy-label limits. NASA POWER provides broad, consistent climate context; Sentinel-2 provides the complementary surface view.
+
+## Scientific limits
+
+The rainfall-deficit target is a proxy, not field-measured drought, crop damage, or soil moisture. POWER grid cells are not local weather stations. The Trend Lab is limited to its four bundled points and annual series; significance does not establish cause or impact. Model confidence is not calibrated and the website's charts and figures are selected, precomputed examples. These limitations are documented so results are not mistaken for operational forecasts or NASA endorsement.
+
+**Data sources:** [NASA POWER Daily API](https://power.larc.nasa.gov/docs/services/api/temporal/daily/), [NASA POWER Monthly API](https://power.larc.nasa.gov/docs/services/api/temporal/monthly/), and [NASA POWER data sources and methodology](https://power.larc.nasa.gov/docs/faqs/data/).
