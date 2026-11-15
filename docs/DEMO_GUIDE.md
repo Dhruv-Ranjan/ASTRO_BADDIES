@@ -11,6 +11,15 @@ Use **Mission dashboard** to explore the bundled regional drought snapshot,
 resource-planning replay, scenario controls, and research notes. The snapshot
 and simulated mission choices are not live satellite telemetry.
 
+The hosted pages do not call NASA POWER or download Sentinel-2 scenes. NASA
+POWER is used by a separate research pipeline in
+`AURORA/AURORA_REALWORLD_FINAL.py`: it supplies daily precipitation and
+temperature context, which is combined with timestamped Sentinel-2
+scene-statistics to build drought predictors and a future rainfall-deficit
+proxy target. The hosted dashboard's bundled drought snapshot and reported
+demo metrics should not be attributed to a live NASA POWER query. See
+[`DATA_SOURCES.md`](DATA_SOURCES.md) for detail.
+
 ## Local static preview
 
 From the `ASTRO_BADDIES` repository root:

@@ -33,3 +33,12 @@ environments are excluded. They are not silently replaced with synthetic
 weights. Exact retraining requires separately acquiring the inputs described in
 the reproducibility documentation.
 
+The NASA POWER daily CSV (`nasa_power_daily.csv`) is a generated cache created
+by `AURORA/AURORA_REALWORLD_FINAL.py` inside its selected output directory; it
+is not committed in this release. To reproduce that workflow, the script
+requests NASA POWER daily `PRECTOTCORR`, `T2M`, `T2M_MAX`, and `T2M_MIN` at the
+study-area centroid, then derives rolling climate features and a
+future 30-day rainfall-deficit target. See [`DATA_SOURCES.md`](DATA_SOURCES.md)
+for full feature and interpretation details. Sentinel-2 scene-statistics
+inputs are locally supplied or optionally downloaded; they are not bundled.
+

@@ -18,6 +18,8 @@ records when this release became available.
 
 - The manuscript itself.
 - The approximately 1.1 GB cached drought dataset.
+- The generated NASA POWER daily climate cache; it is fetched by the separate
+  AURORA research workflow when that workflow is run.
 - Model checkpoints, private databases, credentials, runtime caches, and
   Python bytecode.
 - Broader application and training code not required to reproduce the

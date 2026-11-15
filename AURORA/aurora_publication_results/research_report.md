@@ -4,6 +4,12 @@
 
 This is a synthetic, algorithmic evaluation. It does not establish flight readiness, operational performance, or publication acceptance. Claims must be restricted to the scenarios and assumptions recorded in experiment_config.json.
 
+This scheduler experiment does not consume NASA POWER or Sentinel-2 data: its
+environment and observation outcomes are simulated. NASA POWER is the primary
+climate dataset in a separate AURORA drought forecasting workflow, where daily
+precipitation and temperature are paired with Sentinel-2 scene summaries. Do
+not attribute this report's simulated results to either Earth data source.
+
 ## Pre-registered comparison design
 
 - Monte-Carlo runs per scenario: 24

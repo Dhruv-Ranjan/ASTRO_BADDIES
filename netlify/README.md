@@ -30,6 +30,14 @@ inference is available through the local API described in
 Experiment figures under `graphs/` are recorded research outputs, not live
 spacecraft telemetry or current Earth monitoring data.
 
+The site is static and does not request NASA POWER or Sentinel-2 data at
+runtime. NASA POWER is the primary daily climate input to the separate
+`AURORA/AURORA_REALWORLD_FINAL.py` research workflow: its precipitation and
+temperature time series are turned into rolling climate features and a
+future rainfall-deficit drought proxy target. Sentinel-2 scene statistics add
+the complementary surface signal. See [`../docs/DATA_SOURCES.md`](../docs/DATA_SOURCES.md)
+for exact variables, data lineage, and limits.
+
 ## Local preview
 
 From this directory:

@@ -7,6 +7,18 @@ We present a two-stage deep learning framework for drought prediction that addre
 
 **Keywords:** drought prediction, spectral reconstruction, remote sensing, deep learning, physics-informed neural networks, temporal modeling
 
+> **Dataset-scope clarification:** The results reported in this manuscript
+> describe the Sentinel-2-like sequence experiments summarized below; they
+> must not be attributed to NASA POWER. NASA POWER is used in a separate
+> workflow, `AURORA/AURORA_REALWORLD_FINAL.py`, as the project's primary daily
+> precipitation and temperature climate source. That workflow derives rolling
+> climate features and a future-rainfall drought proxy, paired with
+> Sentinel-2 scene statistics. Its generated input cache and run-specific
+> metrics are separate from the manuscript's reported metrics. See
+> [`../docs/DATA_SOURCES.md`](../docs/DATA_SOURCES.md). A one-day lag is
+> required before claiming intraday-causal forecasting because the rolling
+> features include the matched calendar-day POWER record.
+
 ---
 
 ## 1. Introduction

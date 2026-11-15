@@ -11,6 +11,8 @@
       later.
 - [ ] Restore the large tensor dataset and run a full reproduction if claiming
       full retraining reproducibility.
+- [x] Document NASA POWER's role, requested variables, derived features,
+      Sentinel-2 complement, and data/target limitations.
 
 ## Intentionally excluded
 
@@ -18,5 +20,7 @@
   approximately 1.1 GB+ training inputs.
 - Remote caches, downloaded scene data, databases, logs, bytecode, and local
   virtual environments.
+- The generated `nasa_power_daily.csv` cache; the documented pipeline obtains
+  it from NASA POWER's public Daily Point API when run.
 - Any private credentials or local configuration.
 

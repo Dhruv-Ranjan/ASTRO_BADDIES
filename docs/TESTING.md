@@ -24,4 +24,6 @@ Before a submission, also verify:
 - the repository sample reconstructs six bands;
 - no `.env`, cache, database, tensor dataset, or bytecode is staged;
 - reported JSON metrics match the accompanying run artifacts.
+- NASA POWER workflows are identified by source and the generated daily cache
+  is not mistaken for a bundled input or for live website data.
 

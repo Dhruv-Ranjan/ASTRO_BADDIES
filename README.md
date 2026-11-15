@@ -7,6 +7,7 @@ spatial and temporal behavior, quantify the trend, and assess whether the
 observed change is statistically meaningful.
 
 **Live application:** https://astrobaddies.netlify.app/  
+**NASA Space Apps demo:** [Download the six-slide PDF](AURORA-SR_Demo.pdf)
 **Deployable site:** [`netlify/`](netlify/)
 **Repository folder:** `ASTRO_BADDIES/`
 
@@ -39,6 +40,52 @@ The model pipeline is drought-focused today. The intended Earth change
 workflow extends it with variable discovery, region comparison, trend
 magnitude, uncertainty, and significance tests suited to the data's sampling
 and autocorrelation.
+
+## NASA Earth data at the heart of the research workflow
+
+NASA POWER (Prediction Of Worldwide Energy Resources) is the project's primary
+climate-context data source in its dedicated real-world drought research
+pipeline, [`AURORA/AURORA_REALWORLD_FINAL.py`](AURORA/AURORA_REALWORLD_FINAL.py).
+The pipeline requests daily NASA POWER Agroclimatology (AG) data at the center
+of the selected study-area bounding box: corrected precipitation
+(`PRECTOTCORR`), mean air temperature (`T2M`), daily maximum (`T2M_MAX`), and
+minimum (`T2M_MIN`). NASA POWER makes analysis-ready daily Earth data
+accessible through a documented public API; its meteorological record draws
+on NASA GMAO MERRA-2 and GEOS-IT assimilation products. This is a powerful,
+consistent climate backbone for putting more local satellite observations in
+weather context.
+
+The code turns those daily POWER records into 7-, 15-, 30-, 60-, and 90-day
+rainfall totals and averages, temperature averages, hot-day counts, and a
+rainfall anomaly against the preceding 365-day climatology. It aligns these
+climate features to Sentinel-2 observation dates and uses matched-date and
+preceding POWER features as model predictors; all later 30-day rainfall is
+held out of those predictors. The following 30 days of POWER rainfall
+are reserved as the prediction target: a rainfall-deficit drought proxy
+relative to previously observed rainfall. Future rainfall is never fed into
+predictor features. This makes NASA POWER central to the forecasting design,
+while keeping target construction distinct from prediction inputs.
+
+**Timing caveat:** rolling daily summaries include the matched calendar-day
+POWER record. Because the scenes have intraday timestamps while POWER's daily
+values summarize a full day, strict real-time forecasting would require
+lagging those daily features before evaluation. The workflow excludes the
+future 30-day target from predictors, but its current merge is not an
+intraday-causal guarantee.
+
+Sentinel-2 plays a complementary, smaller role in this workflow. Its
+scene-level vegetation and moisture statistics provide more localized surface
+signals; NASA POWER supplies the broader daily weather history that helps
+interpret them. The Spectral Lab reconstructs six Sentinel-2-style bands from
+RGB in a separate model path. The deployed website displays bundled,
+precomputed artifacts: it does not fetch NASA POWER or Sentinel-2 live, and
+the headline metrics elsewhere in this README must not be read as results of
+the NASA POWER workflow. POWER's gridded weather context is not field truth,
+and the rainfall-based target is not an independent measurement of crop
+damage or soil moisture.
+
+Sources: [NASA POWER Daily API](https://power.larc.nasa.gov/docs/services/api/temporal/daily/),
+[NASA POWER data sources and methodology](https://power.larc.nasa.gov/docs/faqs/data/).
 
 ## Architecture
 

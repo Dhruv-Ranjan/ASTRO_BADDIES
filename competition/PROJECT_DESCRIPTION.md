@@ -42,3 +42,24 @@ experimental, and planner constraints and belief updates are simulated.
 
 This pipeline is a foundation for broader Earth-variable exploration, not a
 claim that regional trend significance analysis is already implemented.
+
+## Earth data used
+
+NASA POWER is the primary climate dataset in the separate real-world drought
+research workflow. Daily corrected precipitation and mean/high/low
+temperature from the NASA POWER Agroclimatology API are transformed into
+rolling rainfall and heat features; following-30-day rainfall is used to
+construct the exploratory drought target. NASA's analysis-ready climate
+archive gives the workflow a consistent weather record, while its MERRA-2 and
+GEOS-IT meteorological inputs bring together Earth observations and
+assimilation modeling. Sentinel-2 contributes the complementary satellite
+surface signal through scene-level vegetation and moisture statistics and
+six-band spectral examples. POWER provides the main climate context; Sentinel-2
+adds localized surface detail. These sources support a research prototype,
+not operational drought claims, and neither is fetched live by the hosted
+static demo. See [Data and references](DATA_AND_REFERENCES.md).
+
+The code holds out the future 30-day target from predictors, but its rolling
+POWER features include the matched calendar-day record. Since a daily total
+may include hours after a Sentinel-2 scene, strict intraday forecasting needs
+an additional one-day lag.
